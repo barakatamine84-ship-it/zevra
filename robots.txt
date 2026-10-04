@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /AGENT.md
+Disallow: /CLAUDE.md
+
+Sitemap: https://zevra.ma/sitemap.xml
