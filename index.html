@@ -29,7 +29,7 @@
     --paper:#fafafa; --surface:#ffffff; --ink:#1b1d21; --ink-soft:#5b606b;
     --line:rgba(27,29,33,.12); --line-strong:rgba(27,29,33,.2);
     --accent:#274060; --accent-ink:#ffffff;
-    --deep:#1b1d21; --deep-ink:#ffffff;
+    --deep:#1b1d21; --deep-ink:#ffffff; --grid:rgba(39,64,96,.05);
     --f-display:"Fraunces",Georgia,"Times New Roman",serif;
     --f-body:"Figtree",-apple-system,"Segoe UI",system-ui,sans-serif;
     --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
@@ -41,13 +41,13 @@
     :root:not([data-theme="light"]){
       --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
       --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
-      --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; color-scheme:dark;
+      --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; --grid:rgba(255,255,255,.045); color-scheme:dark;
     }
   }
   :root[data-theme="dark"]{
     --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
     --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
-    --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; color-scheme:dark;
+    --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; --grid:rgba(255,255,255,.045); color-scheme:dark;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -108,7 +108,9 @@
   .btn-ghost{border-color:var(--line-strong);color:var(--ink)}
   .btn-ghost:hover{border-color:var(--ink)}
   .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-  .hero{padding-block:clamp(56px,9vw,112px) clamp(48px,7vw,88px)}
+  .hero{padding-block:clamp(56px,9vw,112px) clamp(48px,7vw,88px);position:relative}
+  .hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:repeating-linear-gradient(to right,var(--grid) 0 1px,transparent 1px 32px),repeating-linear-gradient(to bottom,var(--grid) 0 1px,transparent 1px 32px);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 55%,transparent 100%)}
+  .hero>*{position:relative;z-index:1}
   .hero h1{font-family:var(--f-display);line-height:1.02;letter-spacing:-.01em;font-size:clamp(44px,8.5vw,92px);max-width:14ch}
   .hero .lede{margin-top:28px;max-width:52ch;font-size:clamp(17px,2.1vw,20px);color:var(--ink-soft)}
   .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:clamp(32px,5vw,64px);align-items:center}
