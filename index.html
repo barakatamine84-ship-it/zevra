@@ -196,7 +196,9 @@
     .call-bar svg{width:18px;height:18px;flex:none}
     body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
   }
-  @media print{.call-bar{display:none}}
+  /* Bouton WhatsApp flottant */
+  .wa-fab{position:fixed;right:20px;bottom:24px;z-index:55;width:54px;height:54px;border-radius:999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.18);transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}.wa-fab:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.22)}.wa-fab svg{width:30px;height:30px;fill:#fff}@media(max-width:720px){.wa-fab{bottom:calc(74px + env(safe-area-inset-bottom,0px));right:16px;width:50px;height:50px}}
+  @media print{.call-bar,.wa-fab{display:none}}
 </style>
 </head>
 <body>
@@ -371,6 +373,7 @@
   </div>
 </footer>
 
+<a class="wa-fab" href="https://wa.me/212661908395" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .4C7.4.4.4 7.3.4 15.9c0 2.8.7 5.5 2.1 7.9L.3 31.6l8-2.1c2.3 1.3 4.9 1.9 7.6 1.9h.1c8.6 0 15.6-7 15.6-15.6C31.6 7.3 24.6.4 16 .4zm0 28.2h-.1c-2.4 0-4.8-.6-6.8-1.9l-.5-.3-4.8 1.3 1.3-4.7-.3-.5c-1.4-2.2-2.1-4.7-2.1-7.3C2.6 8.5 8.6 2.6 16 2.6c3.6 0 6.9 1.4 9.4 3.9 2.5 2.5 3.9 5.9 3.9 9.4 0 7.4-6 13.4-13.3 13.4zm7.3-9.9c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.2s1.4 3.7 1.5 3.9c.2.2 2.7 4.2 6.6 5.9.9.4 1.6.6 2.2.8.9.3 1.7.2 2.4.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg></a>
 <a class="call-bar" href="tel:+212661908395"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Appeler Omar Berrada</a>
 
 <script>

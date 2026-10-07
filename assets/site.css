@@ -265,4 +265,6 @@ footer.site{border-top:1px solid var(--line);padding-block:clamp(40px,6vw,64px)}
   .call-bar svg{width:18px;height:18px;flex:none}
   body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 }
-@media print{header.site,.cta,.filters,.call-bar{display:none}}
+/* Bouton WhatsApp flottant */
+.wa-fab{position:fixed;right:20px;bottom:24px;z-index:55;width:54px;height:54px;border-radius:999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.18);transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}.wa-fab:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.22)}.wa-fab svg{width:30px;height:30px;fill:#fff}@media(max-width:720px){.wa-fab{bottom:calc(74px + env(safe-area-inset-bottom,0px));right:16px;width:50px;height:50px}}
+@media print{header.site,.cta,.filters,.call-bar,.wa-fab{display:none}}
