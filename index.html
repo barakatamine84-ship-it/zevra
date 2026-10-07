@@ -95,7 +95,12 @@
   .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .hero{padding-block:clamp(56px,9vw,112px) clamp(48px,7vw,88px)}
   .hero h1{font-family:var(--f-display);line-height:1.02;letter-spacing:-.01em;font-size:clamp(44px,8.5vw,92px);max-width:14ch}
-  .hero .lede{margin-top:28px;max-width:56ch;font-size:clamp(17px,2.1vw,20px);color:var(--ink-soft)}
+  .hero .lede{margin-top:28px;max-width:52ch;font-size:clamp(17px,2.1vw,20px);color:var(--ink-soft)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:clamp(32px,5vw,64px);align-items:center}
+  .hero-visual{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;aspect-ratio:520/600}
+  .hero-visual svg{width:100%;height:100%;display:block}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-visual{max-width:460px;width:100%;margin-top:4px}}
+  .domain .ic{width:42px;height:42px;display:block;margin-bottom:4px}
   .hero .actions{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
   .ref{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);
     display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;font-size:14px;color:var(--ink-soft)}
@@ -189,20 +194,38 @@
 
 <main id="contenu">
   <section class="hero wrap">
-    <span class="eyebrow reveal">Contractant général · Aménagement intérieur</span>
-    <h1 class="reveal">Exécuter avec rigueur. Livrer avec élégance.</h1>
-    <p class="lede reveal">ZÉVRA réalise les espaces des marques et des entreprises au Maroc —
-      de la préparation à la réception, avec un pilotage clair, une exigence qualité et des délais tenus.</p>
-    <div class="actions reveal">
-      <a class="btn btn-primary" href="/chiffrage.html">Demander un chiffrage</a>
-      <a class="btn btn-ghost" href="tel:+212661908395">Appeler&nbsp;0661&nbsp;908&nbsp;395</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow reveal">Contractant général · Aménagement intérieur</span>
+        <h1 class="reveal">Exécuter avec rigueur. Livrer avec élégance.</h1>
+        <p class="lede reveal">ZÉVRA réalise les espaces des marques et des entreprises au Maroc —
+          de la préparation à la réception, avec un pilotage clair, une exigence qualité et des délais tenus.</p>
+        <div class="actions reveal">
+          <a class="btn btn-primary" href="/chiffrage.html">Demander un chiffrage</a>
+          <a class="btn btn-ghost" href="tel:+212661908395">Appeler&nbsp;0661&nbsp;908&nbsp;395</a>
+        </div>
+        <div class="ref reveal">
+          <span>Référence récente —</span>
+          <b>Booking.com</b><span>· Marina Casablanca</span>
+          <span class="mono">840&nbsp;m²</span>
+        </div>
+        <p class="byline reveal"><b>Omar Berrada</b> — direction de projet &amp; exécution · Casablanca et Rabat</p>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <svg viewBox="0 0 520 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration d’un intérieur aménagé">
+          <g stroke="#3B372F" stroke-width="1.4" opacity="0.45"><path d="M40 86 C 160 64, 340 104, 486 72"/><path d="M40 106 C 160 86, 340 126, 486 94"/><path d="M40 126 C 160 108, 340 148, 486 116"/></g>
+          <path d="M40 148 C 160 130, 340 170, 486 138" stroke="#B0864F" stroke-width="1.6"/>
+          <path d="M175 520 L175 300 Q175 198 260 198 Q345 198 345 300 L345 520" stroke="#3B372F" stroke-width="1.6"/>
+          <path d="M205 520 L205 312 Q205 236 260 236 Q315 236 315 312 L315 520" stroke="#3B372F" stroke-width="1.2" opacity="0.5"/>
+          <g stroke="#3B372F" stroke-width="1" opacity="0.38"><path d="M70 520 L450 520"/><path d="M100 548 L420 548"/><path d="M130 576 L390 576"/></g>
+          <path d="M260 150 L260 250" stroke="#3B372F" stroke-width="1"/>
+          <circle cx="260" cy="262" r="12" stroke="#B0864F" stroke-width="1.6"/>
+          <path d="M420 190 L420 500" stroke="#3B372F" stroke-width="1" opacity="0.32"/>
+          <path d="M100 210 L100 500" stroke="#3B372F" stroke-width="1" opacity="0.32"/>
+          <circle cx="420" cy="178" r="4" fill="#B0864F"/>
+        </svg>
+      </div>
     </div>
-    <div class="ref reveal">
-      <span>Référence récente —</span>
-      <b>Booking.com</b><span>· Marina Casablanca</span>
-      <span class="mono">840&nbsp;m²</span>
-    </div>
-    <p class="byline reveal"><b>Omar Berrada</b> — direction de projet &amp; exécution · Casablanca et Rabat</p>
   </section>
 
   <section class="block" id="methodes">
@@ -242,16 +265,19 @@
       </div>
       <div class="domains">
         <a class="domain reveal" href="/realisations.html#bureaux">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M8 40 H40" stroke="#3B372F" stroke-width="1.5"/><path d="M13 40 V16 H27 V40" stroke="#3B372F" stroke-width="1.5"/><path d="M27 40 V23 H36 V40" stroke="#B0864F" stroke-width="1.5"/><path d="M17 21 H23 M17 26 H23 M17 31 H23" stroke="#3B372F" stroke-width="1.2" opacity="0.5"/></svg>
           <div class="k">Bureaux</div><h3>Sièges &amp; plateaux tertiaires</h3>
           <p>PwC, ManpowerGroup, Booking.com — des plateaux livrés prêts à l’exploitation à Casablanca.</p>
           <span class="arrow">Voir les réalisations →</span>
         </a>
         <a class="domain reveal" href="/realisations.html#hotellerie">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M9 40 H39" stroke="#3B372F" stroke-width="1.5"/><path d="M15 40 V22 Q15 11 24 11 Q33 11 33 22 V40" stroke="#3B372F" stroke-width="1.5"/><path d="M24 11 V6" stroke="#3B372F" stroke-width="1.2"/><circle cx="24" cy="24" r="4" stroke="#B0864F" stroke-width="1.5"/></svg>
           <div class="k">Hôtellerie</div><h3>Lobbies, bars &amp; réception</h3>
           <p>Espaces livrés en site sensible et en exploitation : Villa Blanca, Aïn Diab.</p>
           <span class="arrow">Voir les réalisations →</span>
         </a>
         <a class="domain reveal" href="/realisations.html#retail">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M14 18 H34 L37 40 H11 L14 18 Z" stroke="#3B372F" stroke-width="1.5"/><path d="M19 18 Q19 11 24 11 Q29 11 29 18" stroke="#B0864F" stroke-width="1.5"/></svg>
           <div class="k">Retail &amp; loisirs</div><h3>Boutiques &amp; clubs</h3>
           <p>adidas, Nike / Urban Jungle, Fitness Park — à Salé, Rabat et au-delà.</p>
           <span class="arrow">Voir les réalisations →</span>
