@@ -8,7 +8,7 @@
 <meta name="author" content="ZÉVRA">
 <link rel="canonical" href="https://zevra.ma/">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#E0E0DD" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ZÉVRA">
 <meta property="og:locale" content="fr_FR">
@@ -26,10 +26,10 @@
 
 <style>
   :root{
-    --paper:#E0E0DD; --surface:#EFEFED; --ink:#3B372F; --ink-soft:#6E675B;
-    --line:rgba(59,55,47,.12); --line-strong:rgba(59,55,47,.20);
-    --accent:#B0864F; --accent-ink:#F7F3EB;
-    --deep:#4A4339; --deep-ink:#F4F0E8;
+    --paper:#fafafa; --surface:#ffffff; --ink:#1b1d21; --ink-soft:#5b606b;
+    --line:rgba(27,29,33,.12); --line-strong:rgba(27,29,33,.2);
+    --accent:#274060; --accent-ink:#ffffff;
+    --deep:#1b1d21; --deep-ink:#ffffff;
     --f-display:"Fraunces",Georgia,"Times New Roman",serif;
     --f-body:"Figtree",-apple-system,"Segoe UI",system-ui,sans-serif;
     --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
@@ -39,15 +39,15 @@
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --paper:#191917; --surface:#201f1d; --ink:#edebe6; --ink-soft:#a8a49b;
-      --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.22);
-      --accent:#c6a66f; --accent-ink:#191917; color-scheme:dark;
+      --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
+      --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
+      --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; color-scheme:dark;
     }
   }
   :root[data-theme="dark"]{
-    --paper:#191917; --surface:#201f1d; --ink:#edebe6; --ink-soft:#a8a49b;
-    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.22);
-    --accent:#c6a66f; --accent-ink:#191917; color-scheme:dark;
+    --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
+    --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; color-scheme:dark;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -103,8 +103,8 @@
     padding:14px 24px;border-radius:999px;border:1px solid transparent;cursor:pointer;
     transition:transform .12s var(--ease-out),background .2s var(--ease-out),color .2s var(--ease-out),border-color .2s var(--ease-out)}
   .btn:active{transform:scale(.975)}
-  .btn-primary{background:var(--ink);color:var(--paper)}
-  .btn-primary:hover{background:color-mix(in srgb,var(--ink) 86%,var(--accent))}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-primary:hover{background:color-mix(in srgb,var(--accent) 85%,#000)}
   .btn-ghost{border-color:var(--line-strong);color:var(--ink)}
   .btn-ghost:hover{border-color:var(--ink)}
   .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -236,16 +236,16 @@
       </div>
       <div class="hero-visual reveal" aria-hidden="true">
         <svg viewBox="0 0 520 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration d’un intérieur aménagé">
-          <g stroke="#3B372F" stroke-width="1.4" opacity="0.45"><path d="M40 86 C 160 64, 340 104, 486 72"/><path d="M40 106 C 160 86, 340 126, 486 94"/><path d="M40 126 C 160 108, 340 148, 486 116"/></g>
-          <path d="M40 148 C 160 130, 340 170, 486 138" stroke="#B0864F" stroke-width="1.6"/>
-          <path d="M175 520 L175 300 Q175 198 260 198 Q345 198 345 300 L345 520" stroke="#3B372F" stroke-width="1.6"/>
-          <path d="M205 520 L205 312 Q205 236 260 236 Q315 236 315 312 L315 520" stroke="#3B372F" stroke-width="1.2" opacity="0.5"/>
-          <g stroke="#3B372F" stroke-width="1" opacity="0.38"><path d="M70 520 L450 520"/><path d="M100 548 L420 548"/><path d="M130 576 L390 576"/></g>
-          <path d="M260 150 L260 250" stroke="#3B372F" stroke-width="1"/>
-          <circle cx="260" cy="262" r="12" stroke="#B0864F" stroke-width="1.6"/>
-          <path d="M420 190 L420 500" stroke="#3B372F" stroke-width="1" opacity="0.32"/>
-          <path d="M100 210 L100 500" stroke="#3B372F" stroke-width="1" opacity="0.32"/>
-          <circle cx="420" cy="178" r="4" fill="#B0864F"/>
+          <g stroke="#1b1d21" stroke-width="1.4" opacity="0.45"><path d="M40 86 C 160 64, 340 104, 486 72"/><path d="M40 106 C 160 86, 340 126, 486 94"/><path d="M40 126 C 160 108, 340 148, 486 116"/></g>
+          <path d="M40 148 C 160 130, 340 170, 486 138" stroke="#274060" stroke-width="1.6"/>
+          <path d="M175 520 L175 300 Q175 198 260 198 Q345 198 345 300 L345 520" stroke="#1b1d21" stroke-width="1.6"/>
+          <path d="M205 520 L205 312 Q205 236 260 236 Q315 236 315 312 L315 520" stroke="#1b1d21" stroke-width="1.2" opacity="0.5"/>
+          <g stroke="#1b1d21" stroke-width="1" opacity="0.38"><path d="M70 520 L450 520"/><path d="M100 548 L420 548"/><path d="M130 576 L390 576"/></g>
+          <path d="M260 150 L260 250" stroke="#1b1d21" stroke-width="1"/>
+          <circle cx="260" cy="262" r="12" stroke="#274060" stroke-width="1.6"/>
+          <path d="M420 190 L420 500" stroke="#1b1d21" stroke-width="1" opacity="0.32"/>
+          <path d="M100 210 L100 500" stroke="#1b1d21" stroke-width="1" opacity="0.32"/>
+          <circle cx="420" cy="178" r="4" fill="#274060"/>
         </svg>
       </div>
     </div>
@@ -288,19 +288,19 @@
       </div>
       <div class="domains">
         <a class="domain reveal" href="/realisations.html#bureaux">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M8 40 H40" stroke="#3B372F" stroke-width="1.5"/><path d="M13 40 V16 H27 V40" stroke="#3B372F" stroke-width="1.5"/><path d="M27 40 V23 H36 V40" stroke="#B0864F" stroke-width="1.5"/><path d="M17 21 H23 M17 26 H23 M17 31 H23" stroke="#3B372F" stroke-width="1.2" opacity="0.5"/></svg>
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M8 40 H40" stroke="#1b1d21" stroke-width="1.5"/><path d="M13 40 V16 H27 V40" stroke="#1b1d21" stroke-width="1.5"/><path d="M27 40 V23 H36 V40" stroke="#274060" stroke-width="1.5"/><path d="M17 21 H23 M17 26 H23 M17 31 H23" stroke="#1b1d21" stroke-width="1.2" opacity="0.5"/></svg>
           <div class="k">Bureaux</div><h3>Sièges &amp; plateaux tertiaires</h3>
           <p>PwC, ManpowerGroup, Booking.com — des plateaux livrés prêts à l’exploitation à Casablanca.</p>
           <span class="arrow">Voir les réalisations →</span>
         </a>
         <a class="domain reveal" href="/realisations.html#hotellerie">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M9 40 H39" stroke="#3B372F" stroke-width="1.5"/><path d="M15 40 V22 Q15 11 24 11 Q33 11 33 22 V40" stroke="#3B372F" stroke-width="1.5"/><path d="M24 11 V6" stroke="#3B372F" stroke-width="1.2"/><circle cx="24" cy="24" r="4" stroke="#B0864F" stroke-width="1.5"/></svg>
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M9 40 H39" stroke="#1b1d21" stroke-width="1.5"/><path d="M15 40 V22 Q15 11 24 11 Q33 11 33 22 V40" stroke="#1b1d21" stroke-width="1.5"/><path d="M24 11 V6" stroke="#1b1d21" stroke-width="1.2"/><circle cx="24" cy="24" r="4" stroke="#274060" stroke-width="1.5"/></svg>
           <div class="k">Hôtellerie</div><h3>Lobbies, bars &amp; réception</h3>
           <p>Espaces livrés en site sensible et en exploitation : Villa Blanca, Aïn Diab.</p>
           <span class="arrow">Voir les réalisations →</span>
         </a>
         <a class="domain reveal" href="/realisations.html#retail">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M14 18 H34 L37 40 H11 L14 18 Z" stroke="#3B372F" stroke-width="1.5"/><path d="M19 18 Q19 11 24 11 Q29 11 29 18" stroke="#B0864F" stroke-width="1.5"/></svg>
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M14 18 H34 L37 40 H11 L14 18 Z" stroke="#1b1d21" stroke-width="1.5"/><path d="M19 18 Q19 11 24 11 Q29 11 29 18" stroke="#274060" stroke-width="1.5"/></svg>
           <div class="k">Retail &amp; loisirs</div><h3>Boutiques &amp; clubs</h3>
           <p>adidas, Nike / Urban Jungle, Fitness Park — à Salé, Rabat et au-delà.</p>
           <span class="arrow">Voir les réalisations →</span>

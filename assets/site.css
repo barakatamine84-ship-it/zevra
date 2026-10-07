@@ -1,9 +1,9 @@
 /* ZÉVRA — système visuel commun (harmonisé avec la page d'accueil) */
 :root{
-  --paper:#E0E0DD; --surface:#EFEFED; --ink:#3B372F; --ink-soft:#6E675B;
-  --line:rgba(59,55,47,.12); --line-strong:rgba(59,55,47,.20);
-  --accent:#B0864F; --accent-ink:#F7F3EB;
-  --deep:#4A4339; --deep-ink:#F4F0E8;
+  --paper:#fafafa; --surface:#ffffff; --ink:#1b1d21; --ink-soft:#5b606b;
+  --line:rgba(27,29,33,.12); --line-strong:rgba(27,29,33,.2);
+  --accent:#274060; --accent-ink:#ffffff;
+  --deep:#1b1d21; --deep-ink:#ffffff;
   --f-display:"Fraunces",Georgia,"Times New Roman",serif;
   --f-body:"Figtree",-apple-system,"Segoe UI",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
@@ -14,15 +14,15 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --paper:#191917; --surface:#201f1d; --ink:#edebe6; --ink-soft:#a8a49b;
-    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.22);
-    --accent:#c6a66f; --accent-ink:#191917; color-scheme:dark;
+    --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
+    --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#191917; --surface:#201f1d; --ink:#edebe6; --ink-soft:#a8a49b;
-  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.22);
-  --accent:#c6a66f; --accent-ink:#191917; color-scheme:dark;
+  --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
+  --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
@@ -88,8 +88,8 @@ nav.main a.navlink[aria-current="page"]::after{background:var(--accent)}
   transition:transform .12s var(--ease-out),background .2s var(--ease-out),color .2s var(--ease-out),border-color .2s var(--ease-out)}
 .btn svg{width:18px;height:18px;flex:none}
 .btn:active{transform:scale(.975)}
-.btn-primary{background:var(--ink);color:var(--paper)}
-.btn-primary:hover{background:color-mix(in srgb,var(--ink) 86%,var(--accent))}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:color-mix(in srgb,var(--accent) 85%,#000)}
 .btn-ghost{border-color:var(--line-strong);color:var(--ink)}
 .btn-ghost:hover{border-color:var(--ink)}
 .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
