@@ -243,4 +243,11 @@ footer.site{border-top:1px solid var(--line);padding-block:clamp(40px,6vw,64px)}
   *{animation:none!important;scroll-behavior:auto!important}
   .gallery img,.btn,.steps>li,.domain{transition:none!important}
 }
-@media print{header.site,.cta,.filters{display:none}}
+/* Barre d'appel fixe mobile */
+.call-bar{display:none}
+@media(max-width:720px){
+  .call-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);color:var(--paper);text-decoration:none;justify-content:center;align-items:center;gap:.6em;font:500 15px var(--f-body);padding:15px 16px calc(15px + env(safe-area-inset-bottom,0px))}
+  .call-bar svg{width:18px;height:18px;flex:none}
+  body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+}
+@media print{header.site,.cta,.filters,.call-bar{display:none}}
