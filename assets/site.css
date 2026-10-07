@@ -65,7 +65,22 @@ nav.main a.navlink[aria-current="page"]::after{background:var(--accent)}
   transition:border-color .2s var(--ease-out),background .2s var(--ease-out),color .2s var(--ease-out)}
 .nav-cta svg{width:15px;height:15px}
 .nav-cta:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-@media(max-width:720px){nav.main .navlink{display:none}}
+.menu-toggle{display:none}
+@media(max-width:720px){
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;background:none;border:1px solid var(--line-strong);border-radius:10px;cursor:pointer;padding:0}
+  .menu-toggle span{position:relative;display:block;width:18px;height:1.5px;background:var(--ink)}
+  .menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--ink);transition:transform .2s var(--ease-out),top .2s var(--ease-out)}
+  .menu-toggle span::before{top:-5px}
+  .menu-toggle span::after{top:5px}
+  header.site.open .menu-toggle span{background:transparent}
+  header.site.open .menu-toggle span::before{top:0;transform:rotate(45deg)}
+  header.site.open .menu-toggle span::after{top:0;transform:rotate(-45deg)}
+  nav.main{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:6px var(--gut) 16px;background:var(--paper);border-bottom:1px solid var(--line);display:none}
+  header.site.open nav.main{display:flex}
+  nav.main a.navlink{display:block;font-size:16px;color:var(--ink);padding:13px 0;border-bottom:1px solid var(--line)}
+  nav.main a.navlink::after{display:none}
+  .nav-cta{margin-top:14px;justify-content:center}
+}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:.6em;font-size:15px;font-family:var(--f-body);

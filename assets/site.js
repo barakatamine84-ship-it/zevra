@@ -2,6 +2,19 @@
 (function () {
   document.documentElement.classList.add('js');
 
+  // Menu mobile (burger)
+  var mt = document.querySelector('.menu-toggle');
+  var hdr = document.querySelector('header.site');
+  if (mt && hdr) {
+    mt.addEventListener('click', function () {
+      var open = hdr.classList.toggle('open');
+      mt.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    hdr.querySelectorAll('nav.main a').forEach(function (a) {
+      a.addEventListener('click', function () { hdr.classList.remove('open'); mt.setAttribute('aria-expanded', 'false'); });
+    });
+  }
+
   // Apparition au défilement
   var items = [].slice.call(document.querySelectorAll('.reveal'));
   if (!('IntersectionObserver' in window)) {
