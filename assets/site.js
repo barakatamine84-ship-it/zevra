@@ -1,12 +1,28 @@
-// ZÉVRA — scripts communs
+// ZÉVRA — scripts communs (pages intérieures harmonisées)
 (function () {
-  // Menu mobile
-  var toggle = document.querySelector('.menu-toggle');
-  var nav = document.getElementById('nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.documentElement.classList.add('js');
+
+  // Apparition au défilement
+  var items = [].slice.call(document.querySelectorAll('.reveal'));
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+    var groups = {};
+    items.forEach(function (el) {
+      var p = el.parentElement, key = p ? (p.className || 'root') : 'root';
+      groups[key] = (groups[key] || 0);
+      el.style.transitionDelay = (Math.min(groups[key], 4) * 60) + 'ms';
+      groups[key]++;
+      io.observe(el);
+    });
+    requestAnimationFrame(function () {
+      items.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.95) { el.classList.add('in'); io.unobserve(el); }
+      });
     });
   }
 

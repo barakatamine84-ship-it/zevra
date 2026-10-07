@@ -34,9 +34,9 @@ Ce fichier sert de mémoire aux agents IA (Claude) qui modifient ce site. Le lir
 ├── chiffrage.html      5 étapes, délai 10–15 jours ouvrés, livrables
 ├── contact.html        Coordonnées + formulaire (ouvre un mailto pré-rempli)
 ├── assets/
-│   ├── style.css       Feuille de style unique pour tout le site
-│   ├── main.js         Menu mobile, filtres, galerie (<dialog>), formulaire
-│   └── hero3d.js       Héro 3D (Three.js r128) + défilement des références — accueil uniquement
+│   ├── site.css        Feuille de style des 4 pages intérieures (système visuel harmonisé avec l'accueil)
+│   ├── site.js         Apparition au scroll, filtres, galerie (<dialog>), formulaire — pages intérieures
+│   └── hero3d.js       Héro 3D (Three.js r128) + défilement des références — accueil uniquement (version historique)
 ├── images/             Photos WebP nommées « projet-ville-sujet.webp » + og-zevra.jpg (partage réseaux)
 ├── favicon.svg
 ├── robots.txt
@@ -115,3 +115,6 @@ Clients cités (liste texte, pas de logos) : 34 noms. « f.com » et un logo man
 - **2026-10-04** — Héro de l'accueil refait : surface de lignes 3D interactive (Three.js) + défilement des références.
 - **2026-10-04** — Numéro affiché changé en `0661908395` (liens `tel:` conservés en `+212661908395`).
 - **2026-10-04** — Ajout de ce fichier AGENT.md (+ CLAUDE.md qui l'importe).
+- **2026-10-07** — `index.html` remplacé par une refonte autonome (style intégré, polices Instrument Serif / Hanken Grotesk / IBM Plex Mono, mode sombre, apparitions au scroll). Elle n'utilise plus `assets/style.css`.
+- **2026-10-07** — Harmonisation des 4 pages intérieures sur le nouveau design de l'accueil : nouvelle feuille `assets/site.css` et `assets/site.js` (même système visuel, mode sombre, cartes arrondies, micro-interactions, reveal au scroll). En-tête/pied de page refaits. Anciens `assets/style.css` et `assets/main.js` supprimés (devenus inutilisés). `sitemap.xml` : `lastmod` au 2026-10-07.
+- **Note design** : le site n'est plus en thème clair uniquement — il suit désormais le mode clair/sombre du système (cf. refonte de l'accueil). La section 5 « thème clair uniquement » est caduque.
