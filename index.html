@@ -184,6 +184,30 @@
   .domain .arrow{margin-top:auto;padding-top:20px;font-size:14px;display:inline-flex;gap:.5em;color:var(--ink);transition:gap .2s var(--ease-out)}
   .domain:hover .arrow{gap:.9em}
   @media(max-width:760px){.domains{grid-template-columns:1fr}}
+  /* Zone sombre : « Nos engagements » + « Domaines d'intervention » */
+  .sec-dark{background:var(--deep);border-top:none}
+  .sec-dark .eyebrow{color:rgba(255,255,255,.72)}
+  .sec-dark .eyebrow::before{background:rgba(255,255,255,.6)}
+  .sec-dark .sec-head h2{color:#fff}
+  .sec-dark .sec-head p{color:rgba(255,255,255,.7)}
+  /* Engagements sur fond sombre */
+  .sec-dark .eng .dot{background:#fff;color:var(--deep)}
+  .sec-dark .eng>article:hover .dot{box-shadow:0 8px 20px rgba(255,255,255,.18)}
+  .sec-dark .eng>article::after{border-top-color:rgba(255,255,255,.3)}
+  .sec-dark .eng h3{color:#fff}
+  .sec-dark .eng .sub{color:#9bbbe4}
+  .sec-dark .eng p{color:rgba(255,255,255,.7)}
+  /* Domaines sur fond sombre */
+  .sec-dark .domain{background:#23262b;border-color:rgba(255,255,255,.1)}
+  .sec-dark .domain:hover{border-color:rgba(255,255,255,.22);
+    box-shadow:0 16px 40px rgba(0,0,0,.45),0 3px 8px rgba(0,0,0,.3)}
+  .sec-dark .domain .ic{background:rgba(255,255,255,.08)}
+  .sec-dark .domain:hover .ic{background:rgba(255,255,255,.15)}
+  .sec-dark .domain .ic path,.sec-dark .domain .ic circle{stroke:#cfe0f2}
+  .sec-dark .domain .k{color:#9bbbe4}
+  .sec-dark .domain h3{color:#fff}
+  .sec-dark .domain p{color:rgba(255,255,255,.7)}
+  .sec-dark .domain .arrow{color:#fff}
   /* Bande de clients défilante (marquee) */
   .marquee-band{background:var(--deep);padding-block:clamp(24px,3.4vw,36px)}
   .marquee-band .m-item{color:rgba(255,255,255,.72)}
@@ -288,7 +312,7 @@
     </div>
   </section>
 
-  <section class="block" id="methodes">
+  <section class="block sec-dark" id="methodes">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Nos engagements</span>
@@ -327,7 +351,7 @@
     </div>
   </section>
 
-  <section class="block" id="realisations">
+  <section class="block sec-dark" id="realisations">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Domaines d’intervention</span>
