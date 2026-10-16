@@ -178,15 +178,26 @@
   .domain .arrow{margin-top:18px;font-size:14px;display:inline-flex;gap:.5em;color:var(--ink);transition:gap .2s var(--ease-out)}
   .domain:hover .arrow{gap:.9em}
   @media(max-width:760px){.domains{grid-template-columns:1fr}}
-  .clients{margin-top:48px;display:grid;grid-template-columns:repeat(5,1fr);
-    border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  .clients span{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.02em;color:var(--ink-soft);
-    padding:16px 14px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;min-height:56px;
-    transition:color .2s var(--ease-out),background .2s var(--ease-out)}
-  .clients span:hover{color:var(--ink);background:color-mix(in srgb,var(--accent) 8%,transparent)}
-  @media(max-width:900px){.clients{grid-template-columns:repeat(3,1fr)}}
-  @media(max-width:520px){.clients{grid-template-columns:repeat(2,1fr)}}
+  /* Bande de clients défilante (marquee) */
+  .marquee{margin-top:48px;position:relative;overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+  .marquee-track{display:flex;width:max-content;align-items:center;
+    animation:marquee 56s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .m-item{display:inline-flex;align-items:center;white-space:nowrap;
+    font-family:var(--f-mono);font-size:14px;letter-spacing:.03em;color:var(--ink-soft);
+    padding:0 30px;transition:color .2s var(--ease-out)}
+  .m-item::after{content:"";width:5px;height:5px;border-radius:999px;
+    background:var(--line-strong);margin-left:30px;flex:none}
+  .marquee:hover .m-item{color:var(--ink-soft)}
+  .m-item:hover{color:var(--ink)}
+  @keyframes marquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+  @media(prefers-reduced-motion:reduce){
+    .marquee{-webkit-mask-image:none;mask-image:none}
+    .marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;row-gap:12px}
+    .m-item.dup{display:none}
+  }
   .cta{background:var(--deep);color:var(--deep-ink);border-radius:18px;padding:clamp(40px,6vw,72px);text-align:center}
   .cta .eyebrow{color:color-mix(in srgb,var(--deep-ink) 72%,transparent)}
   .cta .eyebrow::before{background:var(--accent)}
@@ -355,7 +366,9 @@
         <span class="eyebrow">Ils nous ont confié leurs espaces</span>
         <h2>Banques, conseil, enseignes internationales et hôtellerie de luxe.</h2>
       </div>
-      <div class="clients reveal" id="clientgrid"></div>
+      <div class="marquee reveal" id="clientmarquee" role="list" aria-label="Clients de ZÉVRA">
+        <div class="marquee-track"></div>
+      </div>
     </div>
   </section>
 
@@ -421,8 +434,19 @@
       "CIH Bank","Crédit du Maroc","Sumitomo","LafargeHolcim","CGI","Bank Assafa",
       "DB Schenker","AXA","Tommy Hilfiger","Renault Trucks","CFG Bank","TUI fly","Nike",
       "Accenture","Webhelp","Fitness Park","Umnia Bank","Casablanca Finance City"];
-    var g=document.getElementById("clientgrid");
-    if(g){clients.forEach(function(c){var s=document.createElement("span");s.textContent=c;g.appendChild(s);});}
+    var track=document.querySelector("#clientmarquee .marquee-track");
+    if(track){
+      // deux copies identiques pour une boucle sans couture (translateX -50%)
+      for(var copy=0;copy<2;copy++){
+        clients.forEach(function(c){
+          var s=document.createElement("span");
+          s.className="m-item"+(copy?" dup":"");
+          s.textContent=c;
+          if(copy)s.setAttribute("aria-hidden","true");else s.setAttribute("role","listitem");
+          track.appendChild(s);
+        });
+      }
+    }
     var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     // Chiffres clés animés (compte à rebours vers la valeur)
     (function(){
