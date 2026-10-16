@@ -140,7 +140,7 @@ section.block.plain{border-top:none}
 /* Chemin vertical (méthodes — 6 phases en parcours) */
 .path{position:relative;margin-top:48px;max-width:840px;display:grid;gap:0;padding:0;counter-reset:none}
 .path>li{list-style:none;position:relative;display:grid;grid-template-columns:48px 1fr;gap:4px 24px;
-  padding:0 0 clamp(30px,4vw,48px)}
+  padding:0 0 clamp(16px,2.4vw,26px)}
 .path>li:last-child{padding-bottom:0}
 .path>li::before{content:"";position:absolute;left:23px;top:48px;bottom:-2px;width:2px;
   background:color-mix(in srgb,var(--accent) 45%,transparent)}
