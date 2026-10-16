@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -8,7 +8,7 @@
 <meta name="author" content="ZÉVRA">
 <link rel="canonical" href="https://zevra.ma/">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#f4f1eb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1e1a16" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ZÉVRA">
@@ -40,15 +40,15 @@
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --paper:#15120e; --surface:#1e1a16; --ink:#ede8e0; --ink-soft:#a89e90;
+      --paper:#1e1a16; --surface:#2a241b; --ink:#ede8e0; --ink-soft:#a89e90;
       --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
-      --accent:#d2a878; --accent-ink:#15120e; --deep:#1e1a16; --deep-ink:#ede8e0; --grid:rgba(255,255,255,.045); color-scheme:dark;
+      --accent:#d2a878; --accent-ink:#1e1a16; --deep:#15110c; --deep-ink:#ede8e0; --grid:rgba(255,255,255,.045); color-scheme:dark;
     }
   }
   :root[data-theme="dark"]{
-    --paper:#15120e; --surface:#1e1a16; --ink:#ede8e0; --ink-soft:#a89e90;
+    --paper:#1e1a16; --surface:#2a241b; --ink:#ede8e0; --ink-soft:#a89e90;
     --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
-    --accent:#d2a878; --accent-ink:#15120e; --deep:#1e1a16; --deep-ink:#ede8e0; --grid:rgba(255,255,255,.045); color-scheme:dark;
+    --accent:#d2a878; --accent-ink:#1e1a16; --deep:#15110c; --deep-ink:#ede8e0; --grid:rgba(255,255,255,.045); color-scheme:dark;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -135,7 +135,7 @@
   .hero-inner h1{font-family:var(--f-display);color:#fff;line-height:1.02;letter-spacing:-.01em;font-size:clamp(44px,8vw,92px);max-width:16ch;text-wrap:balance}
   .hero-inner .lede{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,20px);color:rgba(255,255,255,.86)}
   .hero-inner .actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-  .hero-inner .btn-primary{background:#fff;color:var(--ink)}
+  .hero-inner .btn-primary{background:#fff;color:#1e1a16}
   .hero-inner .btn-primary:hover{background:rgba(255,255,255,.88)}
   .hero-inner .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
   .hero-inner .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
