@@ -30,9 +30,10 @@ Ce fichier sert de mémoire aux agents IA (Claude) qui modifient ce site. Le lir
 /
 ├── index.html          Accueil (héro 3D, engagements, domaines, clients, CTA)
 ├── methodes.html       6 phases + gouvernance (rôles, rituels, livrables)
-├── realisations.html   8 projets, filtres par typologie, galerie avec agrandissement
+├── realisations.html   8 projets en grille immersive, filtres par typologie, vignettes → pages projet
 ├── chiffrage.html      5 étapes, délai 10–15 jours ouvrés, livrables
 ├── contact.html        Coordonnées + formulaire (ouvre un mailto pré-rempli)
+├── projet-<id>.html    8 pages « étude de cas » (hero photo, fiche, galerie avec agrandissement, pager)
 ├── assets/
 │   ├── site.css        Feuille de style des 4 pages intérieures (système visuel harmonisé avec l'accueil)
 │   ├── site.js         Apparition au scroll, filtres, galerie (<dialog>), formulaire — pages intérieures
@@ -96,7 +97,7 @@ Site statique pur : pas de build, pas de framework, pas de dépendance npm. Héb
 | adidas | Casablanca, Marrakech, Rabat | 2 200 m² | Retail |
 
 Pour chaque projet : rôle ZÉVRA = pilotage d'exécution, planning, qualité, réception ; lots = cloisons, faux plafonds, sols, peinture, menuiserie, MEP.
-Ajouter un projet : nouvel `<article class="project" id="…" data-cat="bureaux|hotellerie|retail">` dans `realisations.html`, mettre à jour l'`ItemList` JSON-LD et, si besoin, `ZEVRA_REFS` dans `index.html`.
+Ajouter un projet : créer `projet-<id>.html` (modèle = pages existantes : head SEO + JSON-LD `GeneralContractor`/`BreadcrumbList`, `.case-hero`, `.case-intro`, `.case-gallery` de `.g-cell` avec `data-images`/`data-start`/`data-caption`, pager en boucle), ajouter une vignette lien `<a class="tile" href="projet-<id>.html" id="…" data-cat="bureaux|hotellerie|retail">` dans `realisations.html`, mettre à jour l'`ItemList` JSON-LD (URL `projet-<id>.html`), `sitemap.xml`, et si besoin la section « Projets en vedette » de `index.html`.
 
 Clients cités (liste texte, pas de logos) : 34 noms. « f.com » et un logo manuscrit illisible de la plaquette ont été volontairement omis.
 
@@ -117,6 +118,7 @@ Clients cités (liste texte, pas de logos) : 34 noms. « f.com » et un logo man
 - **2026-10-04** — Ajout de ce fichier AGENT.md (+ CLAUDE.md qui l'importe).
 - **2026-10-07** — `index.html` remplacé par une refonte autonome (style intégré, polices Instrument Serif / Hanken Grotesk / IBM Plex Mono, mode sombre, apparitions au scroll). Elle n'utilise plus `assets/style.css`.
 - **2026-10-07** — Harmonisation des 4 pages intérieures sur le nouveau design de l'accueil : nouvelle feuille `assets/site.css` et `assets/site.js` (même système visuel, mode sombre, cartes arrondies, micro-interactions, reveal au scroll). En-tête/pied de page refaits. Anciens `assets/style.css` et `assets/main.js` supprimés (devenus inutilisés). `sitemap.xml` : `lastmod` au 2026-10-07.
+- **2026-10-16** — Refonte premium (étape 3) — **Pages « étude de cas » par projet** : création de 8 pages statiques `projet-<id>.html` (manpower, pwc, booking, villa-blanca, nike-urban-jungle, fitness-park-sale, fitness-park-rabat, adidas). Chaque page : hero plein cadre avec photo de couverture (`.case-hero`, fil d'Ariane Accueil/Réalisations/Projet, titre, lieu, puces typologie/surface/ville), intro 2 paragraphes + fiche `.case-fiche` (surface, typologie, lieu, rôle ZÉVRA, lots clés), galerie `.case-gallery` (vignettes `.g-cell` ouvrant la visionneuse au bon index via `data-start`), CTA et pager (← Toutes les réalisations / Projet suivant → en boucle). SEO : `<title>`/description/canonical/OG uniques + JSON-LD `GeneralContractor` et `BreadcrumbList` par page. `realisations.html` : les vignettes `.tile` deviennent des **liens** `<a href="projet-<id>.html">` (plus de visionneuse sur cette page, `<dialog>` retiré) ; `ItemList` JSON-LD repointé vers les URLs `projet-<id>.html`. `index.html` : nouvelle section **« Projets en vedette »** (3 tuiles photo 3/4 → pages projet, CSS `.feat` inline) avant « Références ». `assets/site.js` : visionneuse branchée sur `[data-images]` + support `data-start`. `assets/site.css` : bloc CSS `.case-*/.g-cell/.pager`. Cache assets `?v=8` (pages intérieures + pages projet). `sitemap.xml` : 8 URLs projet ajoutées, `lastmod` au 2026-10-16.
 - **2026-10-16** — Refonte premium (étape 2) — **Réalisations en grille immersive** : les 8 projets sont désormais des vignettes `.tile` (photo de couverture plein cadre, dégradé bas + légende catégorie/nom/surface, survol zoom) dans `.portfolio` (2 colonnes, 1 sur mobile). Les filtres ciblent `.tile`. Clic sur une vignette → **visionneuse** (`#lightbox`) avec la galerie du projet et navigation ‹ › (data-images), clavier ←/→, compteur. CSS `.portfolio/.tile/.lightbox .nav` dans `assets/site.css`, logique dans `assets/site.js`. Anciens `.project/.meta/.gallery` devenus inutilisés (CSS conservé, inerte). Cache assets ?v=7. Ids projets conservés pour le JSON-LD `ItemList`.
 - **2026-10-16** — Refonte premium (étape 1) de l'accueil : hero transformé en **photo plein écran** (`images/pwc-casablanca-open-space.webp`, dégradé sombre pour lisibilité, titre/boutons blancs superposés) à la place de l'illustration au trait ; ajout d'un **bandeau de chiffres clés** `.stats` (8 projets · 10 540 m² · 4 villes · 34 clients). La trame « plan d'architecte » du hero est remplacée par la photo. Reste à faire : grille portfolio immersive (Réalisations) + pages études de cas.
 - **2026-10-08** — Favicon : `favicon.svg` redessiné aux couleurs de la marque (tuile bleu encre `#274060` arrondie + lignes « zèbre » blanches, lisible en petit) et **lié sur les 5 pages** — l'accueil `index.html` ne l'avait pas. Référence `/favicon.svg?v=2` (cache-bust).

@@ -64,13 +64,17 @@
       cap.textContent = set.length > 1 ? (label + ' · ' + (idx + 1) + ' / ' + set.length) : label;
       if (prev) prev.hidden = next.hidden = set.length < 2;
     }
-    function openSet(imgs, caption) { set = imgs; label = caption; idx = 0; show(); dlg.showModal(); }
+    function openSet(imgs, caption, start) {
+      set = imgs; label = caption;
+      idx = Math.min(Math.max(parseInt(start, 10) || 0, 0), imgs.length - 1);
+      show(); dlg.showModal();
+    }
     function step(d) { if (set.length) { idx = (idx + d + set.length) % set.length; show(); } }
-    // Vignettes du portfolio (data-images = liste séparée par |)
-    document.querySelectorAll('.tile').forEach(function (t) {
+    // Vignettes / galerie (data-images = liste séparée par |, data-start = index d'ouverture)
+    document.querySelectorAll('[data-images]').forEach(function (t) {
       t.addEventListener('click', function () {
         var imgs = (t.getAttribute('data-images') || '').split('|').filter(Boolean);
-        if (imgs.length) openSet(imgs, t.getAttribute('data-caption') || '');
+        if (imgs.length) openSet(imgs, t.getAttribute('data-caption') || '', t.getAttribute('data-start'));
       });
     });
     // Compat : anciennes galeries .gallery button (si présentes)
