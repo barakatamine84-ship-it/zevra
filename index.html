@@ -179,7 +179,12 @@
   .domain:hover .arrow{gap:.9em}
   @media(max-width:760px){.domains{grid-template-columns:1fr}}
   /* Bande de clients défilante (marquee) */
-  .marquee{margin-top:48px;position:relative;overflow:hidden;
+  .marquee-band{background:var(--deep);padding-block:clamp(24px,3.4vw,36px)}
+  .marquee-band .m-item{color:rgba(255,255,255,.72)}
+  .marquee-band .m-item::after{background:rgba(255,255,255,.28)}
+  .marquee-band:hover .m-item{color:rgba(255,255,255,.72)}
+  .marquee-band .m-item:hover{color:#fff}
+  .marquee{position:relative;overflow:hidden;
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
     mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
   .marquee-track{display:flex;width:max-content;align-items:center;
@@ -305,6 +310,14 @@
     </div>
   </section>
 
+  <section class="marquee-band" aria-label="Clients de ZÉVRA">
+    <div class="wrap">
+      <div class="marquee reveal" id="clientmarquee" role="list">
+        <div class="marquee-track"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="realisations">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -360,17 +373,6 @@
     </div>
   </section>
 
-  <section class="block" id="references">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Ils nous ont confié leurs espaces</span>
-        <h2>Banques, conseil, enseignes internationales et hôtellerie de luxe.</h2>
-      </div>
-      <div class="marquee reveal" id="clientmarquee" role="list" aria-label="Clients de ZÉVRA">
-        <div class="marquee-track"></div>
-      </div>
-    </div>
-  </section>
 
   <section class="block" id="contact" style="border-top:none">
     <div class="wrap">
