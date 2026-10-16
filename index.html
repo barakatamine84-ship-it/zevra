@@ -209,8 +209,11 @@
   .sec-dark .domain p{color:rgba(255,255,255,.7)}
   .sec-dark .domain .arrow{color:#fff}
   /* Bande de clients défilante (marquee) */
-  .marquee-band{background:var(--accent);border-block:1px solid rgba(255,255,255,.14);
-    padding-block:clamp(24px,3.4vw,36px)}
+  .marquee-band{background:var(--accent);position:relative;padding-block:clamp(24px,3.4vw,36px)}
+  .marquee-band::before,.marquee-band::after{content:"";position:absolute;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.32) 22%,rgba(255,255,255,.32) 78%,transparent)}
+  .marquee-band::before{top:0}
+  .marquee-band::after{bottom:0}
   .marquee-band .m-item{color:rgba(255,255,255,.82)}
   .marquee-band .m-item::after{background:rgba(255,255,255,.35)}
   .marquee-band:hover .m-item{color:rgba(255,255,255,.82)}
