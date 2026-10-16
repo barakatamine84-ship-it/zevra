@@ -45,28 +45,50 @@
     btn.addEventListener('click', function () {
       var cat = btn.dataset.filter;
       filters.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
-      document.querySelectorAll('.project').forEach(function (p) {
+      document.querySelectorAll('.project, .tile').forEach(function (p) {
         p.hidden = !(cat === 'tous' || p.dataset.cat === cat);
       });
     });
   });
 
-  // Galerie agrandie
+  // Galerie / visionneuse projet (vignettes du portfolio)
   var dlg = document.getElementById('lightbox');
   if (dlg && dlg.showModal) {
     var big = dlg.querySelector('img');
     var cap = dlg.querySelector('p');
+    var prev = dlg.querySelector('.prev');
+    var next = dlg.querySelector('.next');
+    var set = [], idx = 0, label = '';
+    function show() {
+      big.src = set[idx]; big.alt = label;
+      cap.textContent = set.length > 1 ? (label + ' · ' + (idx + 1) + ' / ' + set.length) : label;
+      if (prev) prev.hidden = next.hidden = set.length < 2;
+    }
+    function openSet(imgs, caption) { set = imgs; label = caption; idx = 0; show(); dlg.showModal(); }
+    function step(d) { if (set.length) { idx = (idx + d + set.length) % set.length; show(); } }
+    // Vignettes du portfolio (data-images = liste séparée par |)
+    document.querySelectorAll('.tile').forEach(function (t) {
+      t.addEventListener('click', function () {
+        var imgs = (t.getAttribute('data-images') || '').split('|').filter(Boolean);
+        if (imgs.length) openSet(imgs, t.getAttribute('data-caption') || '');
+      });
+    });
+    // Compat : anciennes galeries .gallery button (si présentes)
     document.querySelectorAll('.gallery button').forEach(function (b) {
       b.addEventListener('click', function () {
         var img = b.querySelector('img');
-        big.src = img.currentSrc || img.src;
-        big.alt = img.alt;
-        cap.textContent = img.alt;
-        dlg.showModal();
+        openSet([img.currentSrc || img.src], img.alt);
       });
     });
+    if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+    if (next) next.addEventListener('click', function (e) { e.stopPropagation(); step(1); });
     dlg.querySelector('.close').addEventListener('click', function () { dlg.close(); });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!dlg.open) return;
+      if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === 'ArrowRight') step(1);
+    });
   }
 
   // Formulaire de contact : prépare un e-mail dans la messagerie du visiteur
