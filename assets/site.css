@@ -283,14 +283,13 @@ ul.ticks li strong{color:var(--ink);font-weight:500}
 @media(max-width:560px){.lightbox .nav{width:42px;height:42px;font-size:22px}}
 
 /* Clients grid */
-.clients{margin-top:44px;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-.clients li{list-style:none;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.02em;color:var(--ink-soft);
-  padding:16px 14px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;min-height:56px;
-  transition:color .2s var(--ease-out),background .2s var(--ease-out)}
-.clients li:hover{color:var(--ink);background:color-mix(in srgb,var(--accent) 8%,transparent)}
-@media(max-width:900px){.clients{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:520px){.clients{grid-template-columns:repeat(2,1fr)}}
+.clients{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px;padding:0}
+.clients li{list-style:none;font-family:var(--f-mono);font-size:13px;letter-spacing:.02em;color:var(--ink-soft);
+  padding:11px 18px;border:1px solid var(--line);border-radius:999px;background:var(--surface);text-align:center;
+  transition:color .2s var(--ease-out),border-color .2s var(--ease-out),background .2s var(--ease-out),transform .2s var(--ease-out)}
+.clients li:hover{color:var(--ink);border-color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 7%,transparent);transform:translateY(-2px)}
+@media(max-width:520px){.clients{gap:9px}.clients li{padding:9px 14px;font-size:12px}}
 
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,64px);align-items:start}
