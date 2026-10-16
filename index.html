@@ -152,27 +152,22 @@
   .sec-head{max-width:62ch}
   .sec-head h2{font-family:var(--f-display);font-size:clamp(28px,4.4vw,44px);line-height:1.08;margin-top:18px}
   .sec-head p{margin-top:16px;color:var(--ink-soft);font-size:17px}
-  .eng{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-    border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
-  .eng>article{position:relative;padding:clamp(26px,3vw,40px);border-right:1px solid var(--line);
-    transition:background .25s var(--ease-out)}
-  .eng>article:last-child{border-right:none}
-  .eng>article::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);
-    transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease-out)}
-  .eng>article:hover{background:color-mix(in srgb,var(--accent) 4%,transparent)}
-  .eng>article:hover::before{transform:scaleX(1)}
-  .eng .no{font-family:var(--f-display);font-weight:300;font-size:clamp(34px,3.6vw,46px);
-    line-height:1;color:var(--accent)}
-  .eng h3{font-family:var(--f-display);font-size:24px;margin-top:16px}
-  .eng .sub{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.03em;color:var(--ink-soft);margin-top:8px}
-  .eng ul{list-style:none;margin:22px 0 0;padding:22px 0 0;display:grid;gap:12px;border-top:1px solid var(--line)}
-  .eng li{position:relative;padding-left:22px;font-size:14.5px;color:var(--ink-soft);line-height:1.5}
-  .eng li::before{content:"";position:absolute;left:0;top:6px;width:9px;height:9px;
-    border:1.5px solid var(--accent);border-radius:999px}
-  @media(max-width:760px){.eng{grid-template-columns:1fr}
-    .eng>article{border-right:none;border-bottom:1px solid var(--line)}
-    .eng>article:last-child{border-bottom:none}
-    .eng>article:hover::before{transform:scaleX(1)}}
+  /* Frise de process (pastilles numérotées reliées) */
+  .eng{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .eng>article{position:relative;padding:0}
+  .eng>article::after{content:"";position:absolute;top:23px;left:60px;width:calc(100% - 30px);
+    border-top:1.5px dashed var(--line-strong)}
+  .eng>article:last-child::after{display:none}
+  .eng .dot{position:relative;z-index:1;width:46px;height:46px;border-radius:999px;
+    background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;
+    font-family:var(--f-mono);font-size:14px;letter-spacing:.02em;
+    transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+  .eng>article:hover .dot{transform:scale(1.08);box-shadow:0 8px 20px color-mix(in srgb,var(--accent) 30%,transparent)}
+  .eng h3{font-family:var(--f-display);font-size:24px;margin-top:22px}
+  .eng .sub{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.03em;color:var(--accent);margin-top:8px}
+  .eng p{font-size:14.5px;color:var(--ink-soft);margin-top:12px;line-height:1.6;max-width:36ch}
+  @media(max-width:760px){.eng{grid-template-columns:1fr;gap:30px}
+    .eng>article::after{display:none}}
   .domains{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .domain{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;
     padding:clamp(24px,2.6vw,32px);min-width:0;
@@ -301,21 +296,24 @@
         <p>Bureaux, boutiques, hôtels — chaque chantier est piloté sur le délai, le budget et la qualité,
           avec un suivi des décisions et un reporting chaque semaine.</p>
       </div>
-      <div class="eng reveal">
-        <article>
-          <div class="no">01</div><h3>Délais tenus</h3>
+      <div class="eng">
+        <article class="reveal">
+          <span class="dot">01</span>
+          <h3>Délais tenus</h3>
           <div class="sub">Planning · jalons · chemin critique</div>
-          <ul><li>Planning structuré par jalons</li><li>Approvisionnements critiques anticipés</li><li>Cadence chantier et décisions rapides</li></ul>
+          <p>Planning structuré par jalons, approvisionnements critiques anticipés, cadence de chantier soutenue et décisions rapides.</p>
         </article>
-        <article>
-          <div class="no">02</div><h3>Budget maîtrisé</h3>
+        <article class="reveal">
+          <span class="dot">02</span>
+          <h3>Budget maîtrisé</h3>
           <div class="sub">Bordereau clair · options · arbitrages</div>
-          <ul><li>Hypothèses explicites et bordereau (BOQ)</li><li>Options et alternatives (value engineering)</li><li>Changements chiffrés et validés avant exécution</li></ul>
+          <p>Hypothèses explicites et bordereau (BOQ), options de value engineering, changements chiffrés et validés avant exécution.</p>
         </article>
-        <article>
-          <div class="no">03</div><h3>Qualité premium</h3>
+        <article class="reveal">
+          <span class="dot">03</span>
+          <h3>Qualité premium</h3>
           <div class="sub">Points d’arrêt · OPR · DOE &amp; SAV</div>
-          <ul><li>Standards de finition et points d’arrêt</li><li>OPR structurée et levée de réserves</li><li>DOE, garanties et suivi SAV</li></ul>
+          <p>Standards de finition et points d’arrêt, OPR structurée et levée de réserves, DOE, garanties et suivi SAV.</p>
         </article>
       </div>
     </div>
