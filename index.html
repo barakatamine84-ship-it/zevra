@@ -209,10 +209,11 @@
   .sec-dark .domain p{color:rgba(255,255,255,.7)}
   .sec-dark .domain .arrow{color:#fff}
   /* Bande de clients défilante (marquee) */
-  .marquee-band{background:var(--deep);padding-block:clamp(24px,3.4vw,36px)}
-  .marquee-band .m-item{color:rgba(255,255,255,.72)}
-  .marquee-band .m-item::after{background:rgba(255,255,255,.28)}
-  .marquee-band:hover .m-item{color:rgba(255,255,255,.72)}
+  .marquee-band{background:var(--accent);border-block:1px solid rgba(255,255,255,.14);
+    padding-block:clamp(24px,3.4vw,36px)}
+  .marquee-band .m-item{color:rgba(255,255,255,.82)}
+  .marquee-band .m-item::after{background:rgba(255,255,255,.35)}
+  .marquee-band:hover .m-item{color:rgba(255,255,255,.82)}
   .marquee-band .m-item:hover{color:#fff}
   .marquee{position:relative;overflow:hidden;
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
