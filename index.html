@@ -126,7 +126,8 @@
   /* Hero plein écran photo */
   .hero{position:relative;min-height:min(90vh,780px);display:flex;align-items:flex-end;overflow:hidden}
   .hero-media{position:absolute;inset:0;z-index:0}
-  .hero-media img{width:100%;height:100%;object-fit:cover}
+  .hero-media img{width:100%;height:100%;object-fit:cover;will-change:transform}
+  @media(prefers-reduced-motion:reduce){.hero-media img{transform:none!important}}
   .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,28,.30) 0%,rgba(16,20,28,.52) 50%,rgba(16,20,28,.86) 100%)}
   .hero-inner{position:relative;z-index:1;width:100%;color:#fff;padding-top:140px;padding-bottom:clamp(44px,6vw,80px)}
   .hero-inner .eyebrow{color:rgba(255,255,255,.82)}
@@ -258,10 +259,10 @@
 
   <section class="stats">
     <div class="wrap stats-grid">
-      <div class="stat reveal"><div class="num">8</div><div class="lab">projets livrés</div></div>
-      <div class="stat reveal"><div class="num">10&nbsp;540&nbsp;m²</div><div class="lab">aménagés</div></div>
-      <div class="stat reveal"><div class="num">4</div><div class="lab">villes au Maroc</div></div>
-      <div class="stat reveal"><div class="num">34</div><div class="lab">clients</div></div>
+      <div class="stat reveal"><div class="num" data-count="8">8</div><div class="lab">projets livrés</div></div>
+      <div class="stat reveal"><div class="num" data-count="10540" data-suffix="&nbsp;m²">10&nbsp;540&nbsp;m²</div><div class="lab">aménagés</div></div>
+      <div class="stat reveal"><div class="num" data-count="4">4</div><div class="lab">villes au Maroc</div></div>
+      <div class="stat reveal"><div class="num" data-count="34">34</div><div class="lab">clients</div></div>
     </div>
   </section>
 
@@ -422,6 +423,48 @@
       "Accenture","Webhelp","Fitness Park","Umnia Bank","Casablanca Finance City"];
     var g=document.getElementById("clientgrid");
     if(g){clients.forEach(function(c){var s=document.createElement("span");s.textContent=c;g.appendChild(s);});}
+    var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Chiffres clés animés (compte à rebours vers la valeur)
+    (function(){
+      function fmt(n){return(""+n).replace(/\B(?=(\d{3})+(?!\d))/g," ");}
+      var nums=[].slice.call(document.querySelectorAll(".stat .num[data-count]"));
+      nums.forEach(function(el){
+        var target=parseInt(el.getAttribute("data-count"),10);
+        var suffix=el.getAttribute("data-suffix")||"";
+        if(reduce||isNaN(target))return;
+        function run(){
+          var dur=1500,start=null;
+          function tick(t){
+            if(!start)start=t;
+            var p=Math.min((t-start)/dur,1),e=1-Math.pow(1-p,3);
+            el.innerHTML=fmt(Math.round(target*e))+suffix;
+            if(p<1)requestAnimationFrame(tick);else el.innerHTML=fmt(target)+suffix;
+          }
+          requestAnimationFrame(tick);
+        }
+        if("IntersectionObserver"in window){
+          var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run();o.disconnect();}});},{threshold:.45});
+          o.observe(el);
+        }else run();
+      });
+    })();
+    // Parallaxe légère de la photo hero
+    (function(){
+      if(reduce)return;
+      var hero=document.querySelector(".hero"),img=hero&&hero.querySelector(".hero-media img");
+      if(!img)return;
+      var ticking=false;
+      function update(){
+        var top=hero.getBoundingClientRect().top;
+        var s=Math.max(-1,Math.min(1,-top/window.innerHeight));
+        img.style.transform="translate3d(0,"+(s*42).toFixed(1)+"px,0) scale(1.12)";
+        ticking=false;
+      }
+      function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+      window.addEventListener("scroll",onScroll,{passive:true});
+      window.addEventListener("resize",onScroll,{passive:true});
+      update();
+    })();
     var items=[].slice.call(document.querySelectorAll(".reveal"));
     if(!("IntersectionObserver"in window)){items.forEach(function(el){el.classList.add("in");});return;}
     var io=new IntersectionObserver(function(entries){

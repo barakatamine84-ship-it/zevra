@@ -39,6 +39,26 @@
     });
   }
 
+  // Parallaxe légère des photos de hero (pages projet)
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var hero = document.querySelector('.case-hero'), img = hero && hero.querySelector('.hero-media img');
+    if (!img) return;
+    img.style.willChange = 'transform';
+    var ticking = false;
+    function update() {
+      var top = hero.getBoundingClientRect().top;
+      var s = Math.max(-1, Math.min(1, -top / window.innerHeight));
+      img.style.transform = 'translate3d(0,' + (s * 42).toFixed(1) + 'px,0) scale(1.12)';
+      ticking = false;
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+  })();
+
   // Filtres des réalisations
   var filters = document.querySelectorAll('.filters button');
   filters.forEach(function (btn) {
