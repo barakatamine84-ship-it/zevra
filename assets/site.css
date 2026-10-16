@@ -1,9 +1,9 @@
 /* ZÉVRA — système visuel commun (harmonisé avec la page d'accueil) */
 :root{
-  --paper:#fafafa; --surface:#ffffff; --ink:#1b1d21; --ink-soft:#5b606b;
-  --line:rgba(27,29,33,.12); --line-strong:rgba(27,29,33,.2);
-  --accent:#274060; --accent-ink:#ffffff;
-  --deep:#1b1d21; --deep-ink:#ffffff;
+  --paper:#f4f1eb; --surface:#fcfaf6; --ink:#221e19; --ink-soft:#6c6358;
+  --line:rgba(34,30,25,.12); --line-strong:rgba(34,30,25,.22);
+  --accent:#8a5a2b; --accent-ink:#ffffff;
+  --deep:#1e1a16; --deep-ink:#ffffff;
   --f-display:"Fraunces",Georgia,"Times New Roman",serif;
   --f-body:"Figtree",-apple-system,"Segoe UI",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
@@ -14,15 +14,15 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
+    --paper:#15120e; --surface:#1e1a16; --ink:#ede8e0; --ink-soft:#a89e90;
     --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
-    --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; color-scheme:dark;
+    --accent:#d2a878; --accent-ink:#15120e; --deep:#1e1a16; --deep-ink:#ede8e0; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
+  --paper:#15120e; --surface:#1e1a16; --ink:#ede8e0; --ink-soft:#a89e90;
   --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
-  --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; color-scheme:dark;
+  --accent:#d2a878; --accent-ink:#15120e; --deep:#1e1a16; --deep-ink:#ede8e0; color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
@@ -188,7 +188,7 @@ ul.ticks li strong{color:var(--ink);font-weight:500}
 .tile{position:relative;display:block;padding:0;border:0;background:var(--surface);cursor:pointer;overflow:hidden;border-radius:var(--radius);aspect-ratio:3/2;text-align:left}
 .tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-out)}
 .tile:hover img{transform:scale(1.05)}
-.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(16,20,28,.74) 100%);pointer-events:none}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(22,17,12,.74) 100%);pointer-events:none}
 .tile-ov{position:absolute;left:0;right:0;bottom:0;z-index:1;display:flex;flex-direction:column;gap:3px;padding:20px 24px;color:#fff}
 .tile-cat{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.82)}
 .tile-name{font-family:var(--f-display);font-size:clamp(22px,2.4vw,28px);line-height:1.05}
@@ -202,7 +202,7 @@ ul.ticks li strong{color:var(--ink);font-weight:500}
 .case-hero .hero-media{position:absolute;inset:0;z-index:0}
 .case-hero .hero-media img{width:100%;height:100%;object-fit:cover}
 @media(prefers-reduced-motion:reduce){.case-hero .hero-media img{transform:none!important}}
-.case-hero .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,28,.25),rgba(16,20,28,.5) 55%,rgba(16,20,28,.85))}
+.case-hero .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,17,12,.25),rgba(22,17,12,.5) 55%,rgba(22,17,12,.85))}
 .case-hero .inner{position:relative;z-index:1;width:100%;color:#fff;padding-top:120px;padding-bottom:clamp(36px,5vw,64px)}
 .case-hero .crumb,.case-hero .crumb a{color:rgba(255,255,255,.78)}
 .case-hero .crumb a:hover{color:#fff}
@@ -236,7 +236,7 @@ ul.ticks li strong{color:var(--ink);font-weight:500}
 .lightbox p{text-align:center;margin:14px auto 0;font-size:14px;color:rgba(255,255,255,.8)}
 .lightbox .close{position:fixed;top:16px;right:16px;background:var(--paper);color:var(--ink);border:0;width:46px;height:46px;
   border-radius:999px;font-size:22px;line-height:1;cursor:pointer}
-.lightbox .nav{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.92);color:#1b1d21;border:0;
+.lightbox .nav{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.92);color:#221e19;border:0;
   width:48px;height:48px;border-radius:999px;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lightbox .nav.prev{left:16px}
 .lightbox .nav.next{right:16px}

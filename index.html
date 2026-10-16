@@ -8,8 +8,8 @@
 <meta name="author" content="ZÉVRA">
 <link rel="canonical" href="https://zevra.ma/">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<meta name="theme-color" content="#f4f1eb" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ZÉVRA">
 <meta property="og:locale" content="fr_FR">
@@ -27,10 +27,10 @@
 
 <style>
   :root{
-    --paper:#fafafa; --surface:#ffffff; --ink:#1b1d21; --ink-soft:#5b606b;
-    --line:rgba(27,29,33,.12); --line-strong:rgba(27,29,33,.2);
-    --accent:#274060; --accent-ink:#ffffff;
-    --deep:#1b1d21; --deep-ink:#ffffff; --grid:rgba(39,64,96,.05);
+    --paper:#f4f1eb; --surface:#fcfaf6; --ink:#221e19; --ink-soft:#6c6358;
+    --line:rgba(34,30,25,.12); --line-strong:rgba(34,30,25,.22);
+    --accent:#8a5a2b; --accent-ink:#ffffff;
+    --deep:#1e1a16; --deep-ink:#ffffff; --grid:rgba(138,90,43,.05);
     --f-display:"Fraunces",Georgia,"Times New Roman",serif;
     --f-body:"Figtree",-apple-system,"Segoe UI",system-ui,sans-serif;
     --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
@@ -40,15 +40,15 @@
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
+      --paper:#15120e; --surface:#1e1a16; --ink:#ede8e0; --ink-soft:#a89e90;
       --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
-      --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; --grid:rgba(255,255,255,.045); color-scheme:dark;
+      --accent:#d2a878; --accent-ink:#15120e; --deep:#1e1a16; --deep-ink:#ede8e0; --grid:rgba(255,255,255,.045); color-scheme:dark;
     }
   }
   :root[data-theme="dark"]{
-    --paper:#121316; --surface:#1a1c20; --ink:#ecedef; --ink-soft:#9aa0ab;
+    --paper:#15120e; --surface:#1e1a16; --ink:#ede8e0; --ink-soft:#a89e90;
     --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.2);
-    --accent:#6f93c0; --accent-ink:#121316; --deep:#1a1c20; --deep-ink:#ecedef; --grid:rgba(255,255,255,.045); color-scheme:dark;
+    --accent:#d2a878; --accent-ink:#15120e; --deep:#1e1a16; --deep-ink:#ede8e0; --grid:rgba(255,255,255,.045); color-scheme:dark;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -113,7 +113,7 @@
   .feat .tile{position:relative;display:block;overflow:hidden;border-radius:14px;aspect-ratio:3/4;background:var(--surface);text-decoration:none}
   .feat .tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
   .feat .tile:hover img{transform:scale(1.05)}
-  .feat .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,28,0) 40%,rgba(16,20,28,.78));pointer-events:none}
+  .feat .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,17,12,0) 40%,rgba(22,17,12,.78));pointer-events:none}
   .feat .ov{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:22px;color:#fff}
   .feat .ov .c{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.82)}
   .feat .ov .n{display:block;font-family:var(--f-display);font-size:24px;line-height:1.1;margin-top:6px}
@@ -128,7 +128,7 @@
   .hero-media{position:absolute;inset:0;z-index:0}
   .hero-media img{width:100%;height:100%;object-fit:cover;will-change:transform}
   @media(prefers-reduced-motion:reduce){.hero-media img{transform:none!important}}
-  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,28,.30) 0%,rgba(16,20,28,.52) 50%,rgba(16,20,28,.86) 100%)}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,17,12,.30) 0%,rgba(22,17,12,.52) 50%,rgba(22,17,12,.86) 100%)}
   .hero-inner{position:relative;z-index:1;width:100%;color:#fff;padding-top:140px;padding-bottom:clamp(44px,6vw,80px)}
   .hero-inner .eyebrow{color:rgba(255,255,255,.82)}
   .hero-inner .eyebrow::before{background:#fff}
@@ -173,7 +173,7 @@
     padding:clamp(24px,2.6vw,32px);min-width:0;
     transition:transform .25s var(--ease-out),border-color .25s var(--ease-out),box-shadow .25s var(--ease-out)}
   .domain:hover{transform:translateY(-4px);border-color:var(--line-strong);
-    box-shadow:0 14px 36px rgba(16,20,28,.09),0 3px 8px rgba(16,20,28,.05)}
+    box-shadow:0 14px 36px rgba(22,17,12,.09),0 3px 8px rgba(22,17,12,.05)}
   .domain .ic{width:54px;height:54px;padding:11px;border-radius:13px;box-sizing:border-box;display:block;
     background:color-mix(in srgb,var(--accent) 7%,transparent);margin-bottom:18px;
     transition:background .25s var(--ease-out),transform .25s var(--ease-out)}
@@ -195,16 +195,16 @@
   .sec-dark .eng>article:hover .dot{box-shadow:0 8px 20px rgba(255,255,255,.18)}
   .sec-dark .eng>article::after{border-top-color:rgba(255,255,255,.3)}
   .sec-dark .eng h3{color:#fff}
-  .sec-dark .eng .sub{color:#9bbbe4}
+  .sec-dark .eng .sub{color:#d2a878}
   .sec-dark .eng p{color:rgba(255,255,255,.7)}
   /* Domaines sur fond sombre */
-  .sec-dark .domain{background:#23262b;border-color:rgba(255,255,255,.1)}
+  .sec-dark .domain{background:#272320;border-color:rgba(255,255,255,.1)}
   .sec-dark .domain:hover{border-color:rgba(255,255,255,.22);
     box-shadow:0 16px 40px rgba(0,0,0,.45),0 3px 8px rgba(0,0,0,.3)}
   .sec-dark .domain .ic{background:rgba(255,255,255,.08)}
   .sec-dark .domain:hover .ic{background:rgba(255,255,255,.15)}
-  .sec-dark .domain .ic path,.sec-dark .domain .ic circle{stroke:#cfe0f2}
-  .sec-dark .domain .k{color:#9bbbe4}
+  .sec-dark .domain .ic path,.sec-dark .domain .ic circle{stroke:#e8d6be}
+  .sec-dark .domain .k{color:#d2a878}
   .sec-dark .domain h3{color:#fff}
   .sec-dark .domain p{color:rgba(255,255,255,.7)}
   .sec-dark .domain .arrow{color:#fff}
@@ -361,19 +361,19 @@
       </div>
       <div class="domains">
         <a class="domain reveal" href="/realisations.html#bureaux">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M8 40 H40" stroke="#1b1d21" stroke-width="1.5"/><path d="M13 40 V16 H27 V40" stroke="#1b1d21" stroke-width="1.5"/><path d="M27 40 V23 H36 V40" stroke="#274060" stroke-width="1.5"/><path d="M17 21 H23 M17 26 H23 M17 31 H23" stroke="#1b1d21" stroke-width="1.2" opacity="0.5"/></svg>
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M8 40 H40" stroke="#221e19" stroke-width="1.5"/><path d="M13 40 V16 H27 V40" stroke="#221e19" stroke-width="1.5"/><path d="M27 40 V23 H36 V40" stroke="#8a5a2b" stroke-width="1.5"/><path d="M17 21 H23 M17 26 H23 M17 31 H23" stroke="#221e19" stroke-width="1.2" opacity="0.5"/></svg>
           <div class="k">Bureaux</div><h3>Sièges &amp; plateaux tertiaires</h3>
           <p>PwC, ManpowerGroup, Booking.com — des plateaux livrés prêts à l’exploitation à Casablanca.</p>
           <span class="arrow">Voir les réalisations →</span>
         </a>
         <a class="domain reveal" href="/realisations.html#hotellerie">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M9 40 H39" stroke="#1b1d21" stroke-width="1.5"/><path d="M15 40 V22 Q15 11 24 11 Q33 11 33 22 V40" stroke="#1b1d21" stroke-width="1.5"/><path d="M24 11 V6" stroke="#1b1d21" stroke-width="1.2"/><circle cx="24" cy="24" r="4" stroke="#274060" stroke-width="1.5"/></svg>
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M9 40 H39" stroke="#221e19" stroke-width="1.5"/><path d="M15 40 V22 Q15 11 24 11 Q33 11 33 22 V40" stroke="#221e19" stroke-width="1.5"/><path d="M24 11 V6" stroke="#221e19" stroke-width="1.2"/><circle cx="24" cy="24" r="4" stroke="#8a5a2b" stroke-width="1.5"/></svg>
           <div class="k">Hôtellerie</div><h3>Lobbies, bars &amp; réception</h3>
           <p>Espaces livrés en site sensible et en exploitation : Villa Blanca, Aïn Diab.</p>
           <span class="arrow">Voir les réalisations →</span>
         </a>
         <a class="domain reveal" href="/realisations.html#retail">
-          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M14 18 H34 L37 40 H11 L14 18 Z" stroke="#1b1d21" stroke-width="1.5"/><path d="M19 18 Q19 11 24 11 Q29 11 29 18" stroke="#274060" stroke-width="1.5"/></svg>
+          <svg class="ic" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M14 18 H34 L37 40 H11 L14 18 Z" stroke="#221e19" stroke-width="1.5"/><path d="M19 18 Q19 11 24 11 Q29 11 29 18" stroke="#8a5a2b" stroke-width="1.5"/></svg>
           <div class="k">Retail &amp; loisirs</div><h3>Boutiques &amp; clubs</h3>
           <p>adidas, Nike / Urban Jungle, Fitness Park — à Salé, Rabat et au-delà.</p>
           <span class="arrow">Voir les réalisations →</span>
