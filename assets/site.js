@@ -115,6 +115,27 @@
     });
   }
 
+  // Bande de références défilante (slide) : construit la piste depuis la liste
+  var cband = document.getElementById('clientband');
+  var clist = document.getElementById('clientlist');
+  if (cband && clist) {
+    var ctrack = cband.querySelector('.marquee-track');
+    var cnames = [].map.call(clist.querySelectorAll('li'), function (li) { return li.textContent; });
+    if (ctrack && cnames.length) {
+      for (var copy = 0; copy < 2; copy++) {
+        cnames.forEach(function (n) {
+          var s = document.createElement('span');
+          s.className = 'm-item' + (copy ? ' dup' : '');
+          s.textContent = n;
+          if (copy) s.setAttribute('aria-hidden', 'true'); else s.setAttribute('role', 'listitem');
+          ctrack.appendChild(s);
+        });
+      }
+      clist.hidden = true;
+      cband.hidden = false;
+    }
+  }
+
   // Formulaire de contact : prépare un e-mail dans la messagerie du visiteur
   var form = document.getElementById('contact-form');
   if (form) {
