@@ -23,7 +23,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Pinyon+Script&display=swap">
 
 <style>
   :root{
@@ -145,6 +145,15 @@
   .faq details>.a{padding:0 2px 26px;max-width:72ch}
   .faq details>.a p{color:var(--ink-soft);font-size:15.5px;line-height:1.65}
   .faq details>.a p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+  /* Bloc signature (luxe) */
+  .signature{text-align:center}
+  .signature .quote-mark{display:block;font-family:var(--f-display);font-size:64px;line-height:.5;color:var(--accent);opacity:.5;margin-bottom:8px}
+  .manifesto{font-family:var(--f-display);font-style:italic;font-weight:300;font-size:clamp(25px,3.6vw,42px);
+    line-height:1.34;max-width:22ch;margin:0 auto;color:var(--ink);text-wrap:balance}
+  .sig{margin-top:40px;display:inline-flex;flex-direction:column;align-items:center;gap:4px}
+  .sig .rule{width:46px;height:1px;background:var(--accent);opacity:.6;margin-bottom:12px}
+  .sig-name{font-family:'Pinyon Script',cursive;font-size:clamp(46px,6.5vw,72px);line-height:.9;color:var(--accent)}
+  .sig-role{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
   @media(max-width:760px){.feat{grid-template-columns:1fr 1fr}}
   @media(max-width:480px){.feat{grid-template-columns:1fr}.feat .tile{aspect-ratio:4/3}}
   .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -467,6 +476,18 @@
           <summary><span>Comment se passe le suivi de chantier&nbsp;?</span><span class="plus" aria-hidden="true"></span></summary>
           <div class="a"><p>Réunion de chantier hebdomadaire, compte-rendu sous 24&nbsp;h, suivi de l'avancement, des risques et des décisions. À la livraison&nbsp;: OPR structurée, DOE, garanties, levée des réserves et SAV.</p></div>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block signature">
+    <div class="wrap">
+      <span class="quote-mark reveal" aria-hidden="true">“</span>
+      <p class="manifesto reveal">Chaque chantier est une promesse : livrer un espace à la hauteur de votre image, sans rien céder sur le délai ni sur la finition.</p>
+      <div class="sig reveal">
+        <span class="rule" aria-hidden="true"></span>
+        <span class="sig-name">Omar Berrada</span>
+        <span class="sig-role">Direction de projet &amp; exécution — ZÉVRA</span>
       </div>
     </div>
   </section>
