@@ -58,6 +58,14 @@ header.site{position:sticky;top:0;z-index:50;
   height:64px;padding-inline:var(--gut);max-width:1120px;margin-inline:auto}
 .brand{display:inline-flex;align-items:center;gap:.5em;font-family:var(--f-display);font-size:26px;letter-spacing:.14em}
 .brand-mark{width:25px;height:25px;color:var(--accent);flex:none}
+.brand .wm{color:var(--ink)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .brand .wm{background-image:linear-gradient(100deg,var(--ink) 0 43%,#fff4e2 50%,var(--accent) 54%,var(--ink) 62% 100%);
+    background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    animation:shimmer 6.5s linear infinite}
+  @keyframes shimmer{from{background-position:200% 0}to{background-position:-100% 0}}
+  @media(prefers-reduced-motion:reduce){.brand .wm{animation:none;-webkit-text-fill-color:var(--ink);background:none}}
+}
 nav.main{display:flex;align-items:center;gap:28px}
 nav.main a.navlink{position:relative;font-size:14px;color:var(--ink-soft);transition:color .18s var(--ease-out)}
 nav.main a.navlink::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;
