@@ -21,6 +21,21 @@
     upd();
   })();
 
+  // Bouton retour en haut
+  (function () {
+    var btn = document.createElement('button');
+    btn.className = 'to-top'; btn.type = 'button';
+    btn.setAttribute('aria-label', 'Retour en haut');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
+    document.body.appendChild(btn);
+    btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    var tk = false;
+    function u() { btn.classList.toggle('show', (window.scrollY || document.documentElement.scrollTop) > 600); tk = false; }
+    function o() { if (!tk) { tk = true; requestAnimationFrame(u); } }
+    window.addEventListener('scroll', o, { passive: true });
+    u();
+  })();
+
   // Menu mobile (burger)
   var mt = document.querySelector('.menu-toggle');
   var hdr = document.querySelector('header.site');

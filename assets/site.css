@@ -40,6 +40,9 @@ ul,ol,dl{margin:0;padding:0}
 .skip:focus{left:12px;top:12px;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;z-index:100}
 .scroll-prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:70;
   transition:width .08s linear;pointer-events:none}
+/* Texture grain subtile */
+body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .wrap{max-width:1120px;margin-inline:auto;padding-inline:var(--gut)}
 .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--ink-soft);display:inline-flex;align-items:center;gap:.6em}
@@ -337,7 +340,11 @@ form.quote .btn{margin-top:6px}
 @media(max-width:620px){.contact-grid{grid-template-columns:1fr}form.quote .row{grid-template-columns:1fr}}
 
 /* CTA block */
-.cta{background:var(--deep);color:var(--deep-ink);border-radius:18px;padding:clamp(40px,6vw,72px);text-align:center}
+.cta{position:relative;overflow:hidden;background:var(--deep);color:var(--deep-ink);border-radius:18px;padding:clamp(40px,6vw,72px);text-align:center}
+.cta>*{position:relative;z-index:1}
+.cta::before{content:"";position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:440px;height:300px;
+  pointer-events:none;opacity:.07;background-repeat:no-repeat;background-size:contain;background-position:right center;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 80' fill='none' stroke='%23d2a878' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M6 16c28-10 62 10 108 0'/%3E%3Cpath d='M6 32c28-10 62 10 108 0'/%3E%3Cpath d='M6 48c28-10 62 10 108 0'/%3E%3Cpath d='M6 64c28-10 62 10 108 0'/%3E%3C/svg%3E")}
 .cta .eyebrow{color:color-mix(in srgb,var(--deep-ink) 72%,transparent)}
 .cta h2{font-family:var(--f-display);font-size:clamp(30px,5vw,52px);line-height:1.05;max-width:20ch;margin:16px auto 0}
 .cta p{margin:18px auto 0;max-width:48ch;color:color-mix(in srgb,var(--deep-ink) 74%,transparent)}
@@ -380,4 +387,13 @@ footer.site{background:var(--deep);color:var(--deep-ink);border-top:3px solid va
 }
 /* Bouton WhatsApp flottant */
 .wa-fab{position:fixed;right:20px;bottom:24px;z-index:55;width:54px;height:54px;border-radius:999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.18);transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}.wa-fab:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.22)}.wa-fab svg{width:30px;height:30px;fill:#fff}@media(max-width:720px){.wa-fab{bottom:calc(74px + env(safe-area-inset-bottom,0px));right:16px;width:50px;height:50px}}
-@media print{header.site,.cta,.filters,.call-bar,.wa-fab{display:none}}
+/* Bouton retour en haut */
+.to-top{position:fixed;left:20px;bottom:24px;z-index:56;width:46px;height:46px;border-radius:999px;border:0;cursor:pointer;
+  background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transform:translateY(10px);box-shadow:0 6px 20px rgba(0,0,0,.28);
+  transition:opacity .25s var(--ease-out),transform .25s var(--ease-out),visibility .25s}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{transform:translateY(-2px)}
+.to-top svg{width:20px;height:20px}
+@media(max-width:720px){.to-top{bottom:calc(74px + env(safe-area-inset-bottom,0px));left:16px;width:44px;height:44px}}
+@media print{header.site,.cta,.filters,.call-bar,.wa-fab,.to-top,.scroll-prog{display:none}body::after{display:none}}
