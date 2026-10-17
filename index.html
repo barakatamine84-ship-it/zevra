@@ -121,6 +121,23 @@
   .feat .ov .s{display:block;font-size:13.5px;color:rgba(255,255,255,.82);margin-top:3px}
   .feat-all{display:inline-flex;margin-top:28px;font-family:var(--f-mono);font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:3px}
   .feat-all:hover{color:var(--accent);border-color:var(--accent)}
+  /* FAQ */
+  .faq{max-width:840px;margin-top:44px}
+  .faq details{border-top:1px solid var(--line)}
+  .faq details:last-child{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;
+    padding:22px 2px;font-family:var(--f-display);font-size:21px;line-height:1.25;color:var(--ink);
+    transition:color .2s var(--ease-out)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:hover{color:var(--accent)}
+  .faq .plus{flex:none;position:relative;width:20px;height:20px;color:var(--accent)}
+  .faq .plus::before,.faq .plus::after{content:"";position:absolute;background:currentColor;border-radius:2px}
+  .faq .plus::before{top:9px;left:0;right:0;height:2px}
+  .faq .plus::after{left:9px;top:0;bottom:0;width:2px;transition:transform .3s var(--ease-out)}
+  .faq details[open] .plus::after{transform:scaleY(0)}
+  .faq details>.a{padding:0 2px 26px;max-width:72ch}
+  .faq details>.a p{color:var(--ink-soft);font-size:15.5px;line-height:1.65}
+  .faq details>.a p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
   @media(max-width:760px){.feat{grid-template-columns:1fr 1fr}}
   @media(max-width:480px){.feat{grid-template-columns:1fr}.feat .tile{aspect-ratio:4/3}}
   .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -273,6 +290,7 @@
   .wa-fab{position:fixed;right:20px;bottom:24px;z-index:55;width:54px;height:54px;border-radius:999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.18);transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}.wa-fab:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.22)}.wa-fab svg{width:30px;height:30px;fill:#fff}@media(max-width:720px){.wa-fab{bottom:calc(74px + env(safe-area-inset-bottom,0px));right:16px;width:50px;height:50px}}
   @media print{.call-bar,.wa-fab{display:none}}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dans quelles villes intervient ZÉVRA ?","acceptedAnswer":{"@type":"Answer","text":"ZÉVRA intervient à Casablanca, Rabat, Salé et Marrakech, et plus largement partout au Maroc selon le projet."}},{"@type":"Question","name":"Quels types de projets réalise ZÉVRA ?","acceptedAnswer":{"@type":"Answer","text":"Bureaux et sièges tertiaires, retail et boutiques, hôtellerie et restauration, espaces de loisirs et de sport. En tant que contractant général, ZÉVRA pilote l'exécution de bout en bout, de la préparation à la réception."}},{"@type":"Question","name":"En combien de temps reçoit-on un chiffrage ?","acceptedAnswer":{"@type":"Answer","text":"Entre 10 et 15 jours ouvrés selon la complexité, avec un bordereau quantitatif (BOQ) par lots, un planning macro avec jalons, des options de value engineering et un registre des risques."}},{"@type":"Question","name":"Quels lots ZÉVRA coordonne-t-elle ?","acceptedAnswer":{"@type":"Answer","text":"Cloisons, faux plafonds, sols, peinture, menuiserie et lots techniques (MEP), tous coordonnés par un interlocuteur unique, avec un suivi des décisions et un reporting hebdomadaire."}},{"@type":"Question","name":"ZÉVRA peut-elle travailler en site occupé ou en exploitation ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les travaux sont phasés en site sensible ou occupé avec des horaires adaptés (bureaux en activité, hôtels, commerces), un plan qualité et un plan HSE."}},{"@type":"Question","name":"Comment se passe le suivi de chantier ?","acceptedAnswer":{"@type":"Answer","text":"Réunion de chantier hebdomadaire, compte-rendu sous 24 h, suivi de l'avancement, des risques et des décisions. À la livraison : OPR structurée, DOE, garanties, levée des réserves et SAV."}}]}</script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -409,6 +427,40 @@
     </div>
   </section>
 
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Questions fréquentes</span>
+        <h2>Tout ce qu'il faut savoir avant de lancer.</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary><span>Dans quelles villes intervenez-vous&nbsp;?</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="a"><p>ZÉVRA intervient à Casablanca, Rabat, Salé et Marrakech, et plus largement partout au Maroc selon le projet.</p></div>
+        </details>
+        <details>
+          <summary><span>Quels types de projets réalisez-vous&nbsp;?</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="a"><p>Bureaux et sièges tertiaires, retail et boutiques, hôtellerie et restauration, espaces de loisirs et de sport. En tant que contractant général, nous pilotons l'exécution de bout en bout — de la préparation à la réception.</p></div>
+        </details>
+        <details>
+          <summary><span>En combien de temps recevez-vous un chiffrage&nbsp;?</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="a"><p>Entre 10 et 15 jours ouvrés selon la complexité, avec un bordereau quantitatif (BOQ) par lots, un planning macro avec jalons, des options de value engineering et un registre des risques. <a href="/chiffrage.html">Voir le process de chiffrage →</a></p></div>
+        </details>
+        <details>
+          <summary><span>Quels lots coordonnez-vous&nbsp;?</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="a"><p>Cloisons, faux plafonds, sols, peinture, menuiserie et lots techniques (MEP) — tous coordonnés par un interlocuteur unique, avec un suivi des décisions et un reporting chaque semaine.</p></div>
+        </details>
+        <details>
+          <summary><span>Pouvez-vous travailler en site occupé ou en exploitation&nbsp;?</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="a"><p>Oui. Nous phasons les travaux en site sensible ou occupé et adaptons les horaires (bureaux en activité, hôtels, commerces), avec un plan qualité et un plan HSE.</p></div>
+        </details>
+        <details>
+          <summary><span>Comment se passe le suivi de chantier&nbsp;?</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="a"><p>Réunion de chantier hebdomadaire, compte-rendu sous 24&nbsp;h, suivi de l'avancement, des risques et des décisions. À la livraison&nbsp;: OPR structurée, DOE, garanties, levée des réserves et SAV.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
 
   <section class="block" id="contact" style="border-top:none">
     <div class="wrap">
