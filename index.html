@@ -71,7 +71,8 @@
     border-bottom:1px solid var(--line)}
   .bar{display:flex;align-items:center;justify-content:space-between;
     height:64px;padding-inline:var(--gut);max-width:1120px;margin-inline:auto}
-  .brand{font-family:var(--f-display);font-size:26px;letter-spacing:.14em}
+  .brand{display:inline-flex;align-items:center;gap:.5em;font-family:var(--f-display);font-size:26px;letter-spacing:.14em}
+  .brand-mark{width:25px;height:25px;color:var(--accent);flex:none}
   nav.main{display:flex;align-items:center;gap:28px}
   nav.main a.navlink{position:relative;font-size:14px;color:var(--ink-soft);transition:color .18s var(--ease-out)}
   nav.main a.navlink::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;
@@ -278,7 +279,7 @@
 
 <header class="site">
   <div class="bar">
-    <a class="brand" href="/index.html">ZÉVRA</a>
+    <a class="brand" href="/index.html"><svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.1" stroke-linecap="round"><path d="M3 9c6-3 18 3 24 0"/><path d="M3 16c6-3 18 3 24 0"/><path d="M3 23c6-3 18 3 24 0"/></svg>ZÉVRA</a>
     <nav class="main" aria-label="Navigation principale">
       <a class="navlink" href="/index.html" aria-current="page">Accueil</a>
       <a class="navlink" href="/methodes.html">Méthodes</a>

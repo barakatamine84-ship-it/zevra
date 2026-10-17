@@ -51,7 +51,8 @@ header.site{position:sticky;top:0;z-index:50;
   border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;
   height:64px;padding-inline:var(--gut);max-width:1120px;margin-inline:auto}
-.brand{font-family:var(--f-display);font-size:26px;letter-spacing:.14em}
+.brand{display:inline-flex;align-items:center;gap:.5em;font-family:var(--f-display);font-size:26px;letter-spacing:.14em}
+.brand-mark{width:25px;height:25px;color:var(--accent);flex:none}
 nav.main{display:flex;align-items:center;gap:28px}
 nav.main a.navlink{position:relative;font-size:14px;color:var(--ink-soft);transition:color .18s var(--ease-out)}
 nav.main a.navlink::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;
