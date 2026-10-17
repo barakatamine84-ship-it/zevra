@@ -2,6 +2,25 @@
 (function () {
   document.documentElement.classList.add('js');
 
+  // Barre de progression de défilement (bronze)
+  (function () {
+    var bar = document.createElement('div');
+    bar.className = 'scroll-prog';
+    bar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bar);
+    var ticking = false;
+    function upd() {
+      var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+      var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+      bar.style.width = (Math.min(Math.max(p, 0), 1) * 100).toFixed(2) + '%';
+      ticking = false;
+    }
+    function on() { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }
+    window.addEventListener('scroll', on, { passive: true });
+    window.addEventListener('resize', on, { passive: true });
+    upd();
+  })();
+
   // Menu mobile (burger)
   var mt = document.querySelector('.menu-toggle');
   var hdr = document.querySelector('header.site');

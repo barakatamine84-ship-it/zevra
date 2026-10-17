@@ -61,6 +61,7 @@
   ::selection{background:var(--accent);color:var(--accent-ink)}
   .skip{position:absolute;left:-9999px}
   .skip:focus{left:12px;top:12px;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;z-index:100}
+  .scroll-prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:70;transition:width .08s linear;pointer-events:none}
   .wrap{max-width:1120px;margin-inline:auto;padding-inline:var(--gut)}
   .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;
     text-transform:uppercase;color:var(--ink-soft);display:inline-flex;align-items:center;gap:.6em}
@@ -518,6 +519,7 @@
 <script>
   (function(){
     document.documentElement.classList.add('js');
+    (function(){var bar=document.createElement('div');bar.className='scroll-prog';bar.setAttribute('aria-hidden','true');document.body.appendChild(bar);var t=false;function u(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight,p=m>0?(h.scrollTop||document.body.scrollTop)/m:0;bar.style.width=(Math.min(Math.max(p,0),1)*100).toFixed(2)+'%';t=false;}function o(){if(!t){t=true;requestAnimationFrame(u);}}window.addEventListener('scroll',o,{passive:true});window.addEventListener('resize',o,{passive:true});u();})();
     var mt=document.querySelector('.menu-toggle'),hdr=document.querySelector('header.site');
     if(mt&&hdr){mt.addEventListener('click',function(){var o=hdr.classList.toggle('open');mt.setAttribute('aria-expanded',o?'true':'false');});hdr.querySelectorAll('nav.main a').forEach(function(a){a.addEventListener('click',function(){hdr.classList.remove('open');mt.setAttribute('aria-expanded','false');});});}
     var clients=["PwC","ManpowerGroup","Booking.com","adidas","Royal Mansour","BTI Bank",

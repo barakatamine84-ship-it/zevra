@@ -38,6 +38,8 @@ ul,ol,dl{margin:0;padding:0}
 
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:12px;top:12px;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;z-index:100}
+.scroll-prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:70;
+  transition:width .08s linear;pointer-events:none}
 .wrap{max-width:1120px;margin-inline:auto;padding-inline:var(--gut)}
 .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--ink-soft);display:inline-flex;align-items:center;gap:.6em}
