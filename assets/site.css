@@ -326,6 +326,7 @@ ul.ticks li strong{color:var(--ink);font-weight:500}
 
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,64px);align-items:start}
+.contact-solo{max-width:620px}
 .coord{margin-bottom:28px}
 .coord li{list-style:none;padding:16px 0;border-top:1px solid var(--line)}
 .coord li:first-child{border-top:none}

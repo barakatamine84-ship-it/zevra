@@ -32,7 +32,7 @@ Ce fichier sert de mémoire aux agents IA (Claude) qui modifient ce site. Le lir
 ├── methodes.html       6 phases + gouvernance (rôles, rituels, livrables)
 ├── realisations.html   8 projets en grille immersive, filtres par typologie, vignettes → pages projet
 ├── chiffrage.html      5 étapes, délai 10–15 jours ouvrés, livrables
-├── contact.html        Coordonnées + formulaire (ouvre un mailto pré-rempli)
+├── contact.html        Coordonnées (tél, WhatsApp, e-mail, zone) — formulaire retiré le 2026-10-19
 ├── projet-<id>.html    8 pages « étude de cas » (hero photo, fiche, galerie avec agrandissement, pager)
 ├── assets/
 │   ├── site.css        Feuille de style des 4 pages intérieures (système visuel harmonisé avec l'accueil)
@@ -104,7 +104,7 @@ Clients cités (liste texte, pas de logos) : 34 noms. « f.com » et un logo man
 ## 9. À faire / points ouverts
 
 - [ ] Remplacer les photos par les originaux haute définition (mêmes noms de fichiers) — celles du PDF sont en basse résolution.
-- [~] Formulaire de contact branché sur **Formspree** (envoi AJAX en page). **Reste à faire par le client** : créer un formulaire gratuit sur formspree.io (destinataire o.berrada@zevra.ma) et remplacer `VOTRE_ID` dans `assets/site.js` (constante `FORMSPREE_ENDPOINT`). Tant que ce n'est pas fait, le formulaire retombe automatiquement sur l'ouverture de la messagerie du visiteur (mailto).
+- [x] ~~Formulaire de contact~~ **retiré de la page Contact le 2026-10-19** (demande client). La page ne propose plus que les coordonnées directes (tél, WhatsApp, e-mail). Le handler `#contact-form` + la constante `FORMSPREE_ENDPOINT` restent dans `assets/site.js` mais sont **dormants** (gardés par `if (form)`, sans effet puisque le `<form>` n'existe plus) — prêts à resservir si un formulaire est réintroduit.
 - [ ] Confirmer que le 0661908395 est bien sur WhatsApp (lien `wa.me` sur la page Contact), sinon supprimer ce lien.
 - [ ] Déclarer le site dans Google Search Console et soumettre `sitemap.xml`.
 - [ ] Créer la fiche Google Business Profile (même nom, même numéro, même site).
@@ -112,6 +112,7 @@ Clients cités (liste texte, pas de logos) : 34 noms. « f.com » et un logo man
 
 ## 10. Journal des modifications
 
+- **2026-10-19** — Contact : **formulaire retiré** (demande client). Suppression du `<form id="contact-form">` (champs, honeypot, bouton « Envoyer la demande ») dans `contact.html` ; la section passe de la grille 2 colonnes `.contact-grid` à un bloc simple `.contact-solo` (max-width 620 px, aligné à gauche dans un `.wrap` pleine largeur) ne contenant plus que la liste `.coord` + le bouton « Appeler maintenant ». Sous-titre adapté (« Appelez directement Omar Berrada, ou écrivez-nous par WhatsApp ou e-mail… », l'ancien « Décrivez votre projet » n'avait plus de sens). CSS : règle `.contact-solo` ajoutée à `site.css`. Le handler JS `#contact-form`/`FORMSPREE_ENDPOINT` reste en place mais dormant (gardé par `if(form)`). Vérifié en local (0 erreur JS, alignement OK). Cache CSS/JS pages intérieures + projet `?v=29`.
 - **2026-10-19** — Accueil : bandeau `.stats`, chiffre **« projets livrés » passé de 8 à 48** (`data-count` + texte, `index.html` ligne ~344). Le compteur animé monte désormais jusqu'à 48. (Note : la grille Réalisations ne montre toujours que 8 études de cas en vedette — les autres projets ne sont pas détaillés.)
 - **2026-10-19** — **Migration de domaine `zevra.ma` → `zévra.net`** (`xn--zvra-bpa.net`, acheté sur Namecheap, relié à Vercel via DNS `A @ 216.198.79.1`). Remplacement de **toutes les URL** `https://zevra.ma/…` par `https://xn--zvra-bpa.net/…` dans les 13 pages HTML + `sitemap.xml` + `robots.txt` (canoniques, Open Graph, JSON-LD url/logo/image, liens internes absolus, sitemap, breadcrumbs). **L'e-mail `o.berrada@zevra.ma` est conservé en `.ma`** (55 occurrences intactes, indépendant du site). Champs cachés du formulaire contact `_subject`/`_source` passés à « zévra.net ». Favicon déjà en chemin relatif. Vérifié en local (canonical OK, 0 erreur JS, 0 URL `zevra.ma` restante hors e-mail). **Reste à faire** : configurer `www.zévra.net` (ajout côté Vercel + CNAME Namecheap), déclarer le nouveau domaine dans Google Search Console.
 - **2026-10-19** — **Formulaire de contact câblé sur Formspree** (envoi réel, sans quitter la page). `assets/site.js` : nouveau handler `#contact-form` — POST `fetch` (multipart) vers `FORMSPREE_ENDPOINT` avec `Accept: application/json`, message de succès/erreur en page, `form.reset()` au succès, bouton désactivé pendant l'envoi puis restauré. **Repli automatique sur `mailto:`** si l'ID n'est pas encore renseigné (constante contient `VOTRE_ID`) ou si `fetch` indisponible. `contact.html` : ajout champs cachés `_subject`, `_source` et **honeypot `_gotcha`** (anti-spam, hors écran), `method="post"`, libellé du bouton « Préparer l'e-mail » → « Envoyer la demande ». `assets/site.css` : états `.form-msg.ok` (vert doux `#9cc49a`) / `.form-msg.err` (`#d98b7a`). Testé en local (succès 200 + erreur 422, interception requête). **Action client requise** : créer le formulaire sur formspree.io et remplacer `VOTRE_ID`. Cache CSS/JS pages intérieures + projet `?v=28`.
