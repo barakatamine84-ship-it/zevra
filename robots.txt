@@ -3,4 +3,4 @@ Allow: /
 Disallow: /AGENT.md
 Disallow: /CLAUDE.md
 
-Sitemap: https://xn--zvra-bpa.net/sitemap.xml
+Sitemap: https://zevra.ma/sitemap.xml
