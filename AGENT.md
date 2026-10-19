@@ -112,6 +112,7 @@ Clients cités (liste texte, pas de logos) : 34 noms. « f.com » et un logo man
 
 ## 10. Journal des modifications
 
+- **2026-10-19** — Accueil : **texte du hero allégé** — le paragraphe `.lede` (trop long, 4 propositions) raccourci en une ligne : « Bureaux, retail et hôtellerie au Maroc — livrés clé en main, de la préparation à la réception. ». `<h1>` signature et eyebrow inchangés. `index.html` uniquement (pas de bump de cache).
 - **2026-10-04** — Création du site (5 pages) à partir de la plaquette PDF. SEO, responsive, barre d'appel mobile.
 - **2026-10-04** — Héro de l'accueil refait : surface de lignes 3D interactive (Three.js) + défilement des références.
 - **2026-10-04** — Numéro affiché changé en `0661908395` (liens `tel:` conservés en `+212661908395`).
