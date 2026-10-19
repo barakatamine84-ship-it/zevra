@@ -8,8 +8,8 @@ Ce fichier sert de mémoire aux agents IA (Claude) qui modifient ce site. Le lir
 - **Signature** : « Exécuter avec rigueur. Livrer avec élégance. »
 - **Interlocuteur** : Omar Berrada, direction de projet & exécution.
 - **Zone** : Casablanca, Rabat, Salé, Marrakech, tout le Maroc.
-- **Domaine** : https://zevra.ma
-- **E-mail** : o.berrada@zevra.ma
+- **Domaine** : **zévra.net** (domaine accentué IDN ; forme technique `xn--zvra-bpa.net` — c'est celle à utiliser dans le code : canonical, OG, JSON-LD, sitemap, robots). Hébergé sur Vercel (projet `zevra-livid.vercel.app`), enregistré chez Namecheap, relié par un enregistrement DNS `A @ → 216.198.79.1`. ⚠️ L'ancien domaine `zevra.ma` n'est plus utilisé pour les URL (migration 2026-10-19). `www.zévra.net` reste à configurer.
+- **E-mail** : o.berrada@zevra.ma (⚠️ **reste en `.ma`**, indépendant du domaine du site — ne pas basculer en `.net`)
 - **Téléphone** :
   - affiché partout : `0661908395` (demande explicite du client, ne pas reformater) ;
   - dans les liens d'appel : `tel:+212661908395` (format international, fonctionne aussi depuis l'étranger) ;
@@ -112,6 +112,7 @@ Clients cités (liste texte, pas de logos) : 34 noms. « f.com » et un logo man
 
 ## 10. Journal des modifications
 
+- **2026-10-19** — **Migration de domaine `zevra.ma` → `zévra.net`** (`xn--zvra-bpa.net`, acheté sur Namecheap, relié à Vercel via DNS `A @ 216.198.79.1`). Remplacement de **toutes les URL** `https://zevra.ma/…` par `https://xn--zvra-bpa.net/…` dans les 13 pages HTML + `sitemap.xml` + `robots.txt` (canoniques, Open Graph, JSON-LD url/logo/image, liens internes absolus, sitemap, breadcrumbs). **L'e-mail `o.berrada@zevra.ma` est conservé en `.ma`** (55 occurrences intactes, indépendant du site). Champs cachés du formulaire contact `_subject`/`_source` passés à « zévra.net ». Favicon déjà en chemin relatif. Vérifié en local (canonical OK, 0 erreur JS, 0 URL `zevra.ma` restante hors e-mail). **Reste à faire** : configurer `www.zévra.net` (ajout côté Vercel + CNAME Namecheap), déclarer le nouveau domaine dans Google Search Console.
 - **2026-10-19** — **Formulaire de contact câblé sur Formspree** (envoi réel, sans quitter la page). `assets/site.js` : nouveau handler `#contact-form` — POST `fetch` (multipart) vers `FORMSPREE_ENDPOINT` avec `Accept: application/json`, message de succès/erreur en page, `form.reset()` au succès, bouton désactivé pendant l'envoi puis restauré. **Repli automatique sur `mailto:`** si l'ID n'est pas encore renseigné (constante contient `VOTRE_ID`) ou si `fetch` indisponible. `contact.html` : ajout champs cachés `_subject`, `_source` et **honeypot `_gotcha`** (anti-spam, hors écran), `method="post"`, libellé du bouton « Préparer l'e-mail » → « Envoyer la demande ». `assets/site.css` : états `.form-msg.ok` (vert doux `#9cc49a`) / `.form-msg.err` (`#d98b7a`). Testé en local (succès 200 + erreur 422, interception requête). **Action client requise** : créer le formulaire sur formspree.io et remplacer `VOTRE_ID`. Cache CSS/JS pages intérieures + projet `?v=28`.
 - **2026-10-19** — Accueil : **texte du hero allégé** — le paragraphe `.lede` (trop long, 4 propositions) raccourci en une ligne : « Bureaux, retail et hôtellerie au Maroc — livrés clé en main, de la préparation à la réception. ». `<h1>` signature et eyebrow inchangés. `index.html` uniquement (pas de bump de cache).
 - **2026-10-04** — Création du site (5 pages) à partir de la plaquette PDF. SEO, responsive, barre d'appel mobile.
