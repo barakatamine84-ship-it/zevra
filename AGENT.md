@@ -104,7 +104,7 @@ Clients cités (liste texte, pas de logos) : 34 noms. « f.com » et un logo man
 ## 9. À faire / points ouverts
 
 - [ ] Remplacer les photos par les originaux haute définition (mêmes noms de fichiers) — celles du PDF sont en basse résolution.
-- [ ] Brancher le formulaire de contact sur un service d'envoi (ex. Formspree) ; aujourd'hui il ouvre la messagerie du visiteur.
+- [~] Formulaire de contact branché sur **Formspree** (envoi AJAX en page). **Reste à faire par le client** : créer un formulaire gratuit sur formspree.io (destinataire o.berrada@zevra.ma) et remplacer `VOTRE_ID` dans `assets/site.js` (constante `FORMSPREE_ENDPOINT`). Tant que ce n'est pas fait, le formulaire retombe automatiquement sur l'ouverture de la messagerie du visiteur (mailto).
 - [ ] Confirmer que le 0661908395 est bien sur WhatsApp (lien `wa.me` sur la page Contact), sinon supprimer ce lien.
 - [ ] Déclarer le site dans Google Search Console et soumettre `sitemap.xml`.
 - [ ] Créer la fiche Google Business Profile (même nom, même numéro, même site).
@@ -112,6 +112,7 @@ Clients cités (liste texte, pas de logos) : 34 noms. « f.com » et un logo man
 
 ## 10. Journal des modifications
 
+- **2026-10-19** — **Formulaire de contact câblé sur Formspree** (envoi réel, sans quitter la page). `assets/site.js` : nouveau handler `#contact-form` — POST `fetch` (multipart) vers `FORMSPREE_ENDPOINT` avec `Accept: application/json`, message de succès/erreur en page, `form.reset()` au succès, bouton désactivé pendant l'envoi puis restauré. **Repli automatique sur `mailto:`** si l'ID n'est pas encore renseigné (constante contient `VOTRE_ID`) ou si `fetch` indisponible. `contact.html` : ajout champs cachés `_subject`, `_source` et **honeypot `_gotcha`** (anti-spam, hors écran), `method="post"`, libellé du bouton « Préparer l'e-mail » → « Envoyer la demande ». `assets/site.css` : états `.form-msg.ok` (vert doux `#9cc49a`) / `.form-msg.err` (`#d98b7a`). Testé en local (succès 200 + erreur 422, interception requête). **Action client requise** : créer le formulaire sur formspree.io et remplacer `VOTRE_ID`. Cache CSS/JS pages intérieures + projet `?v=28`.
 - **2026-10-19** — Accueil : **texte du hero allégé** — le paragraphe `.lede` (trop long, 4 propositions) raccourci en une ligne : « Bureaux, retail et hôtellerie au Maroc — livrés clé en main, de la préparation à la réception. ». `<h1>` signature et eyebrow inchangés. `index.html` uniquement (pas de bump de cache).
 - **2026-10-04** — Création du site (5 pages) à partir de la plaquette PDF. SEO, responsive, barre d'appel mobile.
 - **2026-10-04** — Héro de l'accueil refait : surface de lignes 3D interactive (Three.js) + défilement des références.

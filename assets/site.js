@@ -170,13 +170,27 @@
     }
   }
 
-  // Formulaire de contact : prépare un e-mail dans la messagerie du visiteur
+  // Formulaire de contact.
+  // Envoi direct via Formspree (sans quitter la page). Tant que l'identifiant
+  // n'est pas renseigné ci-dessous, on retombe sur l'ouverture de la messagerie.
+  // → Créer un formulaire gratuit sur https://formspree.io (destinataire
+  //   o.berrada@zevra.ma), puis remplacer VOTRE_ID par l'identifiant fourni
+  //   (ex. 'https://formspree.io/f/abcdwxyz').
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/VOTRE_ID';
+
   var form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      var f = new FormData(form);
+    var msg = form.querySelector('.form-msg');
+    var btn = form.querySelector('button[type="submit"]');
+    var configured = FORMSPREE_ENDPOINT.indexOf('VOTRE_ID') === -1;
+
+    function setMsg(text, cls) {
+      if (!msg) return;
+      msg.className = 'form-msg' + (cls ? ' ' + cls : '');
+      msg.textContent = text;
+    }
+
+    function openMailto(f) {
       var subject = 'Demande de projet — ' + (f.get('societe') || f.get('nom'));
       var body = [
         'Nom : ' + f.get('nom'),
@@ -190,7 +204,41 @@
         f.get('message')
       ].join('\n');
       window.location.href = 'mailto:o.berrada@zevra.ma?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      document.querySelector('.form-msg').textContent = "Votre messagerie s'ouvre avec la demande prête à envoyer. Si rien ne s'ouvre, écrivez directement à o.berrada@zevra.ma.";
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var f = new FormData(form);
+      if (f.get('_gotcha')) return; // piège anti-robot : si rempli, on ignore
+
+      // Repli : pas d'identifiant Formspree ou pas de fetch → messagerie du visiteur.
+      if (!configured || !window.fetch) {
+        openMailto(f);
+        setMsg("Votre messagerie s'ouvre avec la demande prête à envoyer. Si rien ne s'ouvre, écrivez directement à o.berrada@zevra.ma.");
+        return;
+      }
+
+      var oldLabel = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Envoi…'; }
+      setMsg('');
+
+      fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: f,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (r) {
+        if (r.ok) {
+          form.reset();
+          setMsg('Merci, votre demande a bien été envoyée. Omar Berrada vous répond sous 24 h ouvrées.', 'ok');
+        } else {
+          setMsg("L'envoi a échoué. Réessayez, ou écrivez directement à o.berrada@zevra.ma.", 'err');
+        }
+      }).catch(function () {
+        setMsg("L'envoi a échoué (connexion). Réessayez, ou écrivez directement à o.berrada@zevra.ma.", 'err');
+      }).then(function () {
+        if (btn) { btn.disabled = false; btn.textContent = oldLabel; }
+      });
     });
   }
 })();

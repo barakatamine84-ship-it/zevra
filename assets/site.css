@@ -344,7 +344,9 @@ form.quote textarea{min-height:140px;resize:vertical}
 form.quote input:focus,form.quote select:focus,form.quote textarea:focus{outline:none;border-color:var(--accent);
   box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
 form.quote .btn{margin-top:6px}
-.form-msg{margin-top:14px;font-size:14px;color:var(--accent)}
+.form-msg{margin-top:14px;font-size:14px;color:var(--accent);line-height:1.5}
+.form-msg.ok{color:#9cc49a}
+.form-msg.err{color:#d98b7a}
 @media(max-width:620px){.contact-grid{grid-template-columns:1fr}form.quote .row{grid-template-columns:1fr}}
 
 /* CTA block */
