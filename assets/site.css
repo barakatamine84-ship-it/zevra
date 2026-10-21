@@ -327,6 +327,9 @@ ul.ticks li strong{color:var(--ink);font-weight:500}
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,64px);align-items:start}
 .contact-solo{max-width:620px}
+.page-banner{position:relative;margin:4px 0 0;width:100%;height:clamp(200px,34vw,360px);overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.page-banner img{width:100%;height:100%;object-fit:cover;display:block}
+.page-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,12,.22),rgba(21,17,12,.55));pointer-events:none}
 .coord{margin-bottom:28px}
 .coord li{list-style:none;padding:16px 0;border-top:1px solid var(--line)}
 .coord li:first-child{border-top:none}
