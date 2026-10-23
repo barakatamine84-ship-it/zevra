@@ -1,0 +1,4 @@
+# Fichiers internes (mémoire projet pour les agents IA).
+# Gardés dans le dépôt Git, mais JAMAIS téléversés/déployés sur le site en ligne.
+AGENT.md
+CLAUDE.md
