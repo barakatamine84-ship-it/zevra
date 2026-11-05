@@ -374,6 +374,7 @@ form.quote .btn{margin-top:6px}
 .cta .btn-ghost:hover{border-color:var(--deep-ink)}
 
 /* Footer */
+.li-ico{display:inline-block;width:15px;height:15px;margin-right:.5em;vertical-align:-2px;color:var(--accent)}
 footer.site{background:var(--deep);color:var(--deep-ink);border-top:3px solid var(--accent);
   padding-block:clamp(48px,6vw,72px)}
 .foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:32px}
