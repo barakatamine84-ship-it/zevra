@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Aménager vos bureaux sans mauvaise surprise — ZÉVRA</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400&family=IBM+Plex+Mono:wght@400;500&display=block">
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--esp:#1e1a16;--deep:#15110c;--ink:#2a241d;--soft:#6c6358;--bronze:#a8773f;--bronze-l:#d2a878;--paper:#fbf9f5;--line:#e4ddd2}
+body{font-family:Figtree,sans-serif;color:var(--ink);font-size:10.6pt;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;background:var(--paper);padding:22mm 20mm 20mm}
+.page:last-child{page-break-after:auto}
+.mono{font-family:"IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;font-size:8pt}
+.serif{font-family:Fraunces,serif;font-weight:300}
+.foot{position:absolute;left:20mm;right:20mm;bottom:11mm;display:flex;justify-content:space-between;color:var(--soft)}
+.foot .mono{font-size:7pt}
+/* cover */
+.cover{background:var(--esp);color:#ede8e0;padding:26mm 22mm}
+.cover .waves{position:absolute;right:-30mm;top:40mm;width:150mm;opacity:.18}
+.cover .brand{font-family:Fraunces,serif;font-size:20pt;letter-spacing:.18em}
+.cover .k{color:var(--bronze-l);margin-top:70mm}
+.cover h1{font-family:Fraunces,serif;font-weight:300;font-size:40pt;line-height:1.05;margin-top:8mm;max-width:150mm}
+.cover .sub{font-size:13pt;color:#bfb4a5;margin-top:9mm;max-width:130mm;line-height:1.5}
+.cover .by{position:absolute;left:22mm;bottom:24mm;right:22mm;border-top:1px solid rgba(210,168,120,.35);padding-top:7mm;display:flex;justify-content:space-between;align-items:flex-end}
+.cover .by p{font-size:10pt;color:#bfb4a5}
+.cover .by strong{color:#ede8e0;font-weight:500}
+/* intro */
+h2{font-family:Fraunces,serif;font-weight:300;font-size:25pt;line-height:1.12;color:var(--esp)}
+.lead{font-size:12.5pt;color:var(--ink);margin-top:7mm;line-height:1.6}
+p+p{margin-top:3.5mm}
+.intro p{max-width:150mm}
+.callout{margin-top:10mm;border-left:2px solid var(--bronze);padding:2mm 0 2mm 7mm}
+.callout .mono{color:var(--bronze)}
+.callout p{font-family:Fraunces,serif;font-weight:300;font-size:15pt;line-height:1.35;color:var(--esp);margin-top:3mm}
+.toc{margin-top:12mm;display:grid;grid-template-columns:1fr 1fr;gap:2.6mm 10mm}
+.toc div{display:flex;gap:4mm;font-size:10.2pt;border-bottom:1px solid var(--line);padding-bottom:2.4mm}
+.toc span{font-family:"IBM Plex Mono",monospace;color:var(--bronze);font-size:9pt;min-width:7mm}
+/* points */
+.pt{padding:7mm 0 6mm;border-top:1px solid var(--line);display:grid;grid-template-columns:20mm 1fr;gap:0 6mm}
+.pt:first-of-type{border-top:0;padding-top:0}
+.pt .n{font-family:Fraunces,serif;font-weight:300;font-size:30pt;color:var(--bronze);line-height:1}
+.pt h3{font-family:Fraunces,serif;font-weight:400;font-size:15pt;color:var(--esp);line-height:1.2}
+.pt p{margin-top:2.6mm;color:#3d362d}
+.pt ul{margin-top:2.6mm;padding-left:0;list-style:none}
+.pt li{position:relative;padding-left:5mm;margin-top:1.2mm;color:#3d362d}
+.pt li::before{content:"";position:absolute;left:0;top:2.3mm;width:2mm;height:2mm;border:1px solid var(--bronze);border-radius:50%}
+.tip{margin-top:3mm;font-size:9.6pt;color:var(--soft);font-style:italic}
+.head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9mm}
+.head .mono{color:var(--bronze)}
+/* checklist */
+.check{margin-top:9mm}
+.check li{list-style:none;display:grid;grid-template-columns:7mm 1fr;gap:4mm;padding:3.4mm 0;border-bottom:1px solid var(--line);font-size:10.6pt}
+.check li i{width:4.6mm;height:4.6mm;border:1.2px solid var(--bronze);border-radius:1mm;margin-top:.6mm}
+.check li b{font-weight:600;color:var(--esp)}
+/* last */
+.last{background:var(--esp);color:#ede8e0}
+.last h2{color:#ede8e0}
+.last .lead{color:#cfc5b6}
+.last .facts{margin-top:10mm;display:grid;grid-template-columns:repeat(3,1fr);gap:6mm}
+.last .facts div{border-top:1px solid rgba(210,168,120,.4);padding-top:4mm}
+.last .facts strong{display:block;font-family:Fraunces,serif;font-weight:300;font-size:22pt;color:#ede8e0}
+.last .facts span{font-size:9pt;color:#bfb4a5}
+.last .cta{margin-top:14mm;background:rgba(210,168,120,.1);border:1px solid rgba(210,168,120,.35);border-radius:3mm;padding:9mm}
+.last .cta h3{font-family:Fraunces,serif;font-weight:300;font-size:19pt}
+.last .cta p{color:#cfc5b6;margin-top:3mm}
+.last .contacts{margin-top:6mm;display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;font-size:11pt}
+.last .contacts .mono{color:var(--bronze-l);display:block;margin-bottom:1mm;font-size:7.5pt}
+.last .foot{color:#9e9384}
+.disclaimer{position:absolute;left:22mm;right:22mm;bottom:20mm;font-size:8pt;color:#8f8576;line-height:1.5}
+</style>
+</head>
+<body>
+
+<!-- 1. Couverture -->
+<section class="page cover">
+  <svg class="waves" viewBox="0 0 300 200" fill="none" stroke="#d2a878" stroke-width="10" stroke-linecap="round"><path d="M10 50c60-30 180 30 280 0"/><path d="M10 100c60-30 180 30 280 0"/><path d="M10 150c60-30 180 30 280 0"/></svg>
+  <div class="brand">ZÉVRA</div>
+  <div class="mono k">Guide pratique · Aménagement de bureaux</div>
+  <h1>Aménager vos bureaux sans mauvaise surprise.</h1>
+  <p class="sub">10 points à vérifier avant de lancer les travaux, pour tenir votre budget, votre planning et votre date d’emménagement.</p>
+  <div class="by">
+    <p><strong>Omar Berrada</strong><br>Fondateur de ZÉVRA · 15 ans de pilotage<br>de projets d’aménagement au Maroc</p>
+    <span class="mono" style="color:#d2a878">zevra.ma</span>
+  </div>
+</section>
+
+<!-- 2. Introduction -->
+<section class="page intro">
+  <div class="head"><span class="mono">Avant de commencer</span><span class="mono" style="color:#6c6358">02</span></div>
+  <h2>Un projet d’aménagement dérape rarement à cause d’un seul lot.</h2>
+  <p class="lead">Il dérape quand les décisions arrivent trop tard, quand le chiffrage laisse des zones grises, ou quand personne ne tient l’ensemble.</p>
+  <p style="margin-top:6mm">Cloisons, faux plafonds, sols, électricité, réseau, climatisation, menuiserie, mobilier : un aménagement de bureaux mobilise souvent plus d’une dizaine de corps de métier. Chacun dépend du précédent. Une hésitation sur un choix de finition, un équipement commandé trop tard, et c’est toute la date d’emménagement qui glisse.</p>
+  <p>Ce guide rassemble les dix vérifications qui évitent la plupart de ces dérapages. Il s’adresse aux dirigeants, directeurs administratifs et responsables des services généraux qui préparent un déménagement, une extension ou une rénovation de leurs bureaux.</p>
+  <div class="callout">
+    <span class="mono">À retenir</span>
+    <p>Chaque semaine passée à bien préparer en fait gagner plusieurs pendant le chantier.</p>
+  </div>
+  <div class="toc">
+    <div><span>01</span>Partir du besoin, pas de la surface</div>
+    <div><span>06</span>Prévoir une réserve pour imprévus</div>
+    <div><span>02</span>Visiter et relever le site</div>
+    <div><span>07</span>Penser les lots techniques dès le départ</div>
+    <div><span>03</span>Lire les règles de l’immeuble</div>
+    <div><span>08</span>Un seul responsable de la coordination</div>
+    <div><span>04</span>Rétroplanifier depuis l’emménagement</div>
+    <div><span>09</span>Valider sur échantillons</div>
+    <div><span>05</span>Exiger un chiffrage par lots</div>
+    <div><span>10</span>Organiser une vraie réception</div>
+  </div>
+  <div class="foot"><span class="mono">ZÉVRA — Guide aménagement de bureaux</span><span class="mono">zevra.ma</span></div>
+</section>
+
+<!-- 3. Points 1-3 -->
+<section class="page">
+  <div class="head"><span class="mono">Préparer</span><span class="mono" style="color:#6c6358">03</span></div>
+  <div class="pt"><div class="n">01</div><div>
+    <h3>Partir du besoin, pas de la surface</h3>
+    <p>Avant de parler plans et matériaux, décrivez comment vos équipes travaillent aujourd’hui et comment elles travailleront dans trois ans.</p>
+    <ul><li>Effectif actuel et prévisionnel, part du télétravail.</li><li>Nombre et taille des salles de réunion réellement utilisées.</li><li>Besoins de confidentialité, zones calmes, espaces d’accueil et de pause.</li></ul>
+    <p class="tip">Un programme clair évite de payer des mètres carrés inutiles, ou de manquer de place six mois après l’emménagement.</p>
+  </div></div>
+  <div class="pt"><div class="n">02</div><div>
+    <h3>Visiter et relever le site</h3>
+    <p>Une visite technique avant tout chiffrage permet de repérer ce qui coûte cher quand on le découvre en cours de chantier.</p>
+    <ul><li>État de l’existant : faux plafonds, sols, réseaux, tableaux électriques.</li><li>Climatisation et ventilation : capacité, emplacement des équipements.</li><li>Accès : monte-charge, horaires autorisés, stationnement des livraisons.</li></ul>
+  </div></div>
+  <div class="pt"><div class="n">03</div><div>
+    <h3>Lire les règles de l’immeuble</h3>
+    <p>Bailleur, syndic, règlement intérieur : beaucoup d’immeubles de bureaux imposent leurs propres conditions de travaux.</p>
+    <ul><li>Horaires de chantier, travaux bruyants autorisés ou non.</li><li>Validation préalable des plans par le bailleur.</li><li>Formalités éventuelles auprès de la commune selon la nature des travaux : renseignez-vous tôt.</li></ul>
+  </div></div>
+  <div class="foot"><span class="mono">ZÉVRA — Guide aménagement de bureaux</span><span class="mono">zevra.ma</span></div>
+</section>
+
+<!-- 4. Points 4-6 -->
+<section class="page">
+  <div class="head"><span class="mono">Chiffrer & planifier</span><span class="mono" style="color:#6c6358">04</span></div>
+  <div class="pt"><div class="n">04</div><div>
+    <h3>Rétroplanifier depuis la date d’emménagement</h3>
+    <p>Partez de la date à laquelle vos équipes doivent s’installer, et remontez le temps : réception, travaux, commandes, validations, chiffrage.</p>
+    <ul><li>Identifiez les éléments à long délai d’approvisionnement (menuiseries sur mesure, équipements techniques, mobilier).</li><li>Fixez des dates de décision : chaque choix tardif retarde une commande.</li><li>Gardez une marge avant la date d’emménagement pour les réserves.</li></ul>
+  </div></div>
+  <div class="pt"><div class="n">05</div><div>
+    <h3>Exiger un chiffrage par lots, hypothèses écrites</h3>
+    <p>Un prix global sans détail ne permet ni de comparer, ni de piloter. Demandez un bordereau par lot, avec les quantités et les hypothèses.</p>
+    <ul><li>Ce qui est compris, ce qui ne l’est pas, noir sur blanc.</li><li>Les niveaux de finition retenus pour chaque poste.</li><li>Des options chiffrées pour arbitrer (alternatives de matériaux, phasage).</li></ul>
+    <p class="tip">Deux devis ne se comparent qu’à périmètre identique. Le moins cher sur le papier est souvent celui qui a le plus d’exclusions.</p>
+  </div></div>
+  <div class="pt"><div class="n">06</div><div>
+    <h3>Prévoir une réserve pour imprévus</h3>
+    <p>Même bien préparé, un chantier réserve des surprises, surtout en rénovation. Une réserve identifiée dès le départ évite les arbitrages dans l’urgence.</p>
+    <ul><li>Une réserve de l’ordre de 5 à 10 % du budget travaux est une pratique courante.</li><li>Décidez à l’avance qui peut l’engager, et comment.</li></ul>
+  </div></div>
+  <div class="foot"><span class="mono">ZÉVRA — Guide aménagement de bureaux</span><span class="mono">zevra.ma</span></div>
+</section>
+
+<!-- 5. Points 7-10 -->
+<section class="page">
+  <div class="head"><span class="mono">Exécuter & livrer</span><span class="mono" style="color:#6c6358">05</span></div>
+  <div class="pt"><div class="n">07</div><div>
+    <h3>Penser les lots techniques dès le départ</h3>
+    <p>Électricité, courants faibles et réseau, climatisation, éclairage, acoustique : ce sont les postes les plus souvent sous-estimés, et les plus coûteux à reprendre.</p>
+    <ul><li>Positionnez prises, réseau et éclairage à partir du plan de mobilier.</li><li>Vérifiez que la climatisation suit le nouveau cloisonnement.</li></ul>
+  </div></div>
+  <div class="pt"><div class="n">08</div><div>
+    <h3>Un seul responsable de la coordination</h3>
+    <p>Quand chaque entreprise ne répond que de son lot, personne ne répond des interfaces entre les lots. C’est là que naissent les retards et les reprises.</p>
+    <ul><li>Un interlocuteur unique, responsable du planning d’ensemble.</li><li>Une réunion de chantier hebdomadaire et un compte rendu écrit.</li></ul>
+  </div></div>
+  <div class="pt"><div class="n">09</div><div>
+    <h3>Valider sur échantillons avant de commander</h3>
+    <p>Une couleur sur un écran n’est pas une couleur sur un mur. Validez sols, revêtements, peintures et quincaillerie sur échantillons physiques, puis figez les choix.</p>
+  </div></div>
+  <div class="pt"><div class="n">10</div><div>
+    <h3>Organiser une vraie réception</h3>
+    <p>La réception est le moment où vous acceptez les travaux. Elle se prépare.</p>
+    <ul><li>Visite contradictoire et liste écrite des réserves.</li><li>Dossier des ouvrages exécutés : plans à jour, notices, garanties.</li><li>Délai et suivi de la levée des réserves.</li></ul>
+  </div></div>
+  <div class="foot"><span class="mono">ZÉVRA — Guide aménagement de bureaux</span><span class="mono">zevra.ma</span></div>
+</section>
+
+<!-- 6. Checklist -->
+<section class="page">
+  <div class="head"><span class="mono">Check-list</span><span class="mono" style="color:#6c6358">06</span></div>
+  <h2>Votre check-list avant travaux</h2>
+  <p class="lead" style="font-size:11pt;color:#6c6358;margin-top:4mm">À imprimer et à cocher avec votre équipe.</p>
+  <ul class="check">
+    <li><i></i><span><b>Programme validé</b> — effectifs, salles, zones et besoins à 3 ans.</span></li>
+    <li><i></i><span><b>Visite technique faite</b> — existant, réseaux, climatisation, accès relevés.</span></li>
+    <li><i></i><span><b>Règles de l’immeuble connues</b> — horaires, validation du bailleur, formalités.</span></li>
+    <li><i></i><span><b>Rétroplanning établi</b> — dates de décision et délais d’approvisionnement.</span></li>
+    <li><i></i><span><b>Chiffrage par lots reçu</b> — hypothèses, inclusions et exclusions écrites.</span></li>
+    <li><i></i><span><b>Réserve pour imprévus prévue</b> — montant et règle d’engagement définis.</span></li>
+    <li><i></i><span><b>Lots techniques intégrés</b> — électricité, réseau, climatisation, éclairage, acoustique.</span></li>
+    <li><i></i><span><b>Coordinateur unique désigné</b> — réunion hebdomadaire et compte rendu écrit.</span></li>
+    <li><i></i><span><b>Échantillons validés</b> — sols, revêtements, peintures, quincaillerie.</span></li>
+    <li><i></i><span><b>Réception préparée</b> — réserves, dossier des ouvrages, garanties.</span></li>
+  </ul>
+  <div class="foot"><span class="mono">ZÉVRA — Guide aménagement de bureaux</span><span class="mono">zevra.ma</span></div>
+</section>
+
+<!-- 7. À propos + contact -->
+<section class="page last">
+  <div class="head"><span class="mono" style="color:#d2a878">À propos</span><span class="mono" style="color:#9e9384">07</span></div>
+  <h2>ZÉVRA, contractant général en aménagement intérieur.</h2>
+  <p class="lead">Bureaux, retail, hôtellerie, salles de sport : un seul interlocuteur pour tous les lots, du premier relevé à la remise des clés.</p>
+  <p class="lead" style="font-size:11pt;margin-top:5mm">ZÉVRA a été fondée en 2026 par Omar Berrada, ingénieur ESTP. Avant ZÉVRA, il a dirigé pendant douze ans Espacio, spécialiste de l’aménagement d’espaces professionnels, et a été directeur technique de Tetris Maroc (groupe JLL).</p>
+  <div class="facts">
+    <div><strong>15 ans</strong><span>de pilotage de projets d’aménagement</span></div>
+    <div><strong>48</strong><span>projets pilotés par Omar Berrada</span></div>
+    <div><strong>4 villes</strong><span>Casablanca, Rabat, Salé, Marrakech</span></div>
+  </div>
+  <div class="cta">
+    <h3>Un projet en préparation ?</h3>
+    <p>Un premier échange suffit pour cadrer votre besoin, votre planning et vos contraintes. Sans engagement. Réponse sous 24 h ouvrées.</p>
+    <div class="contacts">
+      <div><span class="mono">Téléphone · WhatsApp</span>+212 666 497 798</div>
+      <div><span class="mono">E-mail</span>o.berrada@zevra.ma</div>
+      <div><span class="mono">Site</span>zevra.ma</div>
+      <div><span class="mono">Zone</span>Casablanca, Rabat et tout le Maroc</div>
+    </div>
+  </div>
+  <p class="disclaimer">Ce guide donne des repères généraux. Chaque projet a ses contraintes propres : vérifiez les règles applicables à votre immeuble et à votre commune avec vos interlocuteurs avant de lancer les travaux.</p>
+  <div class="foot"><span class="mono">© 2026 ZÉVRA</span><span class="mono">Exécuter avec rigueur. Livrer avec élégance.</span></div>
+</section>
+</body>
+</html>
