@@ -59,3 +59,4 @@ Formulaires :
 - 16/11 — Vidéo bureaux (formulaire v4) lancée, budget 30 $/j, audience 51+.
 - 17/11 — Audience recentrée sur les fonctions décisionnaires ; vidéo bureaux dupliquée avec formulaire v3 ; v4 en pause.
 - 18/11 — v3 courte en pause ; lancement vidéo guide (lead magnet PDF).
+- 19/11 — Vidéo bureaux **15 s** créée (Seedance 2.5, brouillon 480p agrandi en 1080p par Higgsfield ; 12 s de transformation + 3 s de carte de fin, sous-titres dès 0 s, musique). Pas encore en ligne : à lancer au bilan du 21/11, idéalement avec l'offre guide. Crédits Higgsfield restants ≈ 118 (une finalisation 1080p de 12 s coûte 192).
