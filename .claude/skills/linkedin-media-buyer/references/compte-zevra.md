@@ -42,6 +42,7 @@ Formulaires :
 - Avant relance (7–12/11) : 2 leads (formulaire long et v3), ~142 $ de dépense leads.
 - Relance 16/11 : 1 lead v3 (16/11).
 - 17–19/11 : CTR ~1 % (vidéo bureaux la meilleure créa, ~1,0–1,2 %), mais ~31 ouvertures de formulaire et **0 lead** → problème d'offre / de formulaire, d'où le test devis vs guide.
+- 19/11 (journée partielle, export 12:03 UTC) : bureaux v3 = 6,85 $, 462 impr., CTR 0,87 %, 3 ouvertures, 0 lead ; guide = 5,37 $, 364 impr., CTR 1,10 %, 3 ouvertures, 0 lead. CPM ~14,8 $. Vidéo bureaux (36 s) : 7 % des lectures atteignent 9 s, durée moyenne 5,5 s → trop longue ; vidéo guide (15 s) : 5,2 % vont au bout, engagement 2,7 %. Cumul ≈ 37 ouvertures sans lead depuis le 17/11 (0,9³⁷ ≈ 2 % → structurel).
 - Leads de test à exclure : ceux au nom de l'utilisateur ou d'Omar (tests des formulaires v4 et guide, 17–18/11).
 
 ## Prochaines décisions
