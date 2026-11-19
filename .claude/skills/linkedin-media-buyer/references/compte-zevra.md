@@ -22,7 +22,8 @@
 
 | Publicité | ID | Offre / formulaire | Statut |
 |---|---|---|---|
-| Vidéo bureaux — v3 sans question | 1643992324 | Devis — ZÉVRA — Demande courte v3 (1028419605) | Active |
+| Vidéo bureaux — v3 sans question | 1643992324 | Devis — ZÉVRA — Demande courte v3 (1028419605) | Active → **à mettre en pause dès que la 15 s est Active** |
+| Vidéo bureaux 15s — v3 | 1646437174 | Devis — Demande courte v3 (1028419605), CTA « Obtenir un devis », vidéo 15 s avec voix Victoria | En cours d'évaluation (19/11) — remplace la 36 s |
 | Vidéo guide — 10 points | 1644105684 | Guide gratuit — ZÉVRA — Guide bureaux (1028427859) | Active |
 | Vidéo leads — v3 courte | 1638556244 | Demande courte v3 | En pause |
 | Vidéo bureaux — plateau vide → livré | 1643716794 | Bureaux v4 (question « Échéance ») | En pause |
@@ -60,3 +61,4 @@ Formulaires :
 - 17/11 — Audience recentrée sur les fonctions décisionnaires ; vidéo bureaux dupliquée avec formulaire v3 ; v4 en pause.
 - 18/11 — v3 courte en pause ; lancement vidéo guide (lead magnet PDF).
 - 19/11 — Vidéo bureaux **15 s** créée (Seedance 2.5, brouillon 480p agrandi en 1080p par Higgsfield ; 12 s de transformation + 3 s de carte de fin, sous-titres dès 0 s, musique). Pas encore en ligne : à lancer au bilan du 21/11, idéalement avec l'offre guide. Crédits Higgsfield restants ≈ 118 (une finalisation 1080p de 12 s coûte 192).
+- 19/11 — Pub « Vidéo bureaux 15s — v3 » (ID 1646437174) créée par duplication, version avec voix off (Victoria : phrases A + D + E) ; en évaluation. La pub guide n'est pas touchée (test du 21/11 intact).
