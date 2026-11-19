@@ -24,6 +24,7 @@
 |---|---|---|---|
 | Vidéo bureaux — v3 sans question | 1643992324 | Devis — ZÉVRA — Demande courte v3 (1028419605) | En pause (19/11) |
 | Vidéo bureaux 15s — v3 | 1646437174 | Devis — Demande courte v3 (1028419605), CTA « Obtenir un devis », vidéo 15 s avec voix Victoria | **Active** (19/11) — remplace la 36 s |
+| Vidéo guide — v2 sans tél | 1646698524 | Guide — Guide bureaux v2 sans tél (1028432999), CTA « Télécharger » | En cours d'évaluation (19/11) — remplace la guide v1 |
 | Vidéo guide — 10 points | 1644105684 | Guide gratuit — ZÉVRA — Guide bureaux (1028427859) | Active |
 | Vidéo leads — v3 courte | 1638556244 | Demande courte v3 | En pause |
 | Vidéo bureaux — plateau vide → livré | 1643716794 | Bureaux v4 (question « Échéance ») | En pause |
@@ -65,3 +66,4 @@ Formulaires :
 - 18/11 — v3 courte en pause ; lancement vidéo guide (lead magnet PDF).
 - 19/11 — Vidéo bureaux **15 s** créée (Seedance 2.5, brouillon 480p agrandi en 1080p par Higgsfield ; 12 s de transformation + 3 s de carte de fin, sous-titres dès 0 s, musique). Lancée le jour même en remplacement de la 36 s. Crédits Higgsfield restants ≈ 118 (une finalisation 1080p de 12 s coûte 192).
 - 19/11 — Pub « Vidéo bureaux 15s — v3 » (ID 1646437174) créée par duplication, version avec voix off (Victoria : phrases A + D + E) ; approuvée et Active le 19/11, la 36 s mise en pause. La pub guide n'est pas touchée (test du 21/11 intact).
+- 19/11 (soir) — Formulaire guide sans téléphone (1028432999) + nouvelle pub « Vidéo guide — v2 sans tél » (1646698524) créée via « Créer une publicité » (la duplication verrouille le formulaire). Ancienne pub guide (1644105684) à mettre en pause dès que la v2 est Active. Changement avancé du 21 au 20/11 : ≈ 44 ouvertures sans lead.
