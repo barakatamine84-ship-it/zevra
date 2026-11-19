@@ -32,6 +32,7 @@
 Formulaires :
 - **Demande courte v3** : prénom, nom, e-mail, téléphone, entreprise + question « Type de projet » (l'utilisateur tient à cette question).
 - **Guide bureaux** : prénom, nom, e-mail, téléphone, entreprise, aucune question ; confirmation → lien vers le PDF.
+- **Guide bureaux v2 sans tél** (ID 1028432999, créé le 19/11) : prénom, nom, e-mail, entreprise (tous pré-remplis), aucune question, même confirmation → PDF. À associer à une copie de la pub guide.
 - **Bureaux v4** : abandonné (question « Échéance » jugée bloquante).
 
 ## Budget et facturation
