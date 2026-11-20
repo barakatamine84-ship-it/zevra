@@ -23,8 +23,8 @@
 | Publicité | ID | Offre / formulaire | Statut |
 |---|---|---|---|
 | Vidéo bureaux — v3 sans question | 1643992324 | Devis — ZÉVRA — Demande courte v3 (1028419605) | En pause (19/11) |
-| Vidéo bureaux 15s — v3 | 1646437174 | Devis — Demande courte v3 (1028419605), CTA « Obtenir un devis », vidéo 15 s avec voix Victoria | **Active** (19/11) — remplace la 36 s |
-| Vidéo 8 corps de métier — v3 | 1646885504 | Devis — Demande courte v3 (1028419605), CTA « Obtenir un devis », vidéo 25 s avec voix | En cours d'évaluation (20/11) — remplace la bureaux 15 s |
+| Vidéo bureaux 15s — v3 | 1646437174 | Devis — Demande courte v3 (1028419605), CTA « Obtenir un devis », vidéo 15 s avec voix Victoria | En pause (20/11) |
+| Vidéo 8 corps de métier — v3 | 1646885504 | Devis — Demande courte v3 (1028419605), CTA « Obtenir un devis », vidéo 25 s avec voix | **Active** (20/11) — remplace la bureaux 15 s |
 | Vidéo guide — v2 sans tél | 1646698524 | Guide — Guide bureaux v2 sans tél (1028432999), CTA « Télécharger » | **Active** (19/11) — remplace la guide v1 |
 | Vidéo guide — 10 points | 1644105684 | Guide gratuit — ZÉVRA — Guide bureaux (1028427859) | En pause (19/11) |
 | Vidéo leads — v3 courte | 1638556244 | Demande courte v3 | En pause |
@@ -72,4 +72,4 @@ Formulaires :
 - 20/11 — Vidéo « 8 corps de métier » (20 s, 1080×1350) prête, pas encore en ligne : hook = rembobinage du bureau fini → plateau nu + « 8 corps de métier. 1 seule date. », puis 1 plan par métier (cloisons, faux plafonds, électricité, climatisation, plomberie, sols, peinture, menuiserie), « 1 seul interlocuteur. », carte de fin. 4 plans neufs (clim, plomberie, peinture, menuiserie) : images GPT Image 2.6 → Seedance 2.5 (4 s, 480p) → agrandis 1080p ; les autres viennent de la vidéo 30 s existante. ≈ 57 crédits Higgsfield utilisés, reste ≈ 36. À lancer après le bilan du 21/11, formulaire devis (CTA « Demandez votre chiffrage » sur la carte).
 - 20/11 — Vidéo « 8 corps de métier » : plan Menuiserie refait (menuisier de dos à la visseuse, GPT Image 2.6 + Seedance 2.5) ; **version retenue par l'utilisateur : 25 s** (2 s par métier) — fichier `ZEVRA-8-corps-de-metier-25s.mp4` (scratchpad `metiers/`), miniature `ZEVRA-8-corps-miniature.jpg`. Crédits Higgsfield restants ≈ 22. À lancer après le bilan du 21/11 avec le formulaire devis.
 - 20/11 — Version finale « 8 corps de métier » avec son : `ZEVRA-8-corps-de-metier-25s-voix.mp4` — voix Victoria (ElevenLabs) qui nomme chaque métier au moment où il apparaît + « Un seul interlocuteur… » + « Zévra. Demandez votre chiffrage. », effet « whoosh » sur le rembobinage, musique constante (égalisée sous la voix), −13 LUFS.
-- 20/11 — Pub « Vidéo 8 corps de métier — v3 » (1646885504) créée, formulaire devis v3 ; budget du groupe passé de 30 à 40 $/jour (fin 29/11, ≈ 400 $ restants). Bureaux 15 s à mettre en pause dès que la nouvelle est Active.
+- 20/11 — Pub « Vidéo 8 corps de métier — v3 » (1646885504) créée, formulaire devis v3 ; budget du groupe passé de 30 à 40 $/jour (fin 29/11, ≈ 400 $ restants). Approuvée et Active le jour même ; bureaux 15 s mise en pause. Actives : 8 corps de métier (devis v3) + guide v2 (sans tél.).
