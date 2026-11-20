@@ -11,7 +11,7 @@
 
 ## Structure active (au 19/11/2026)
 - Campagne **ZÉVRA — Leads Chiffrage** (ID 1251172704), objectif génération de leads.
-- Groupe **Génération de leads - Nov 7, 2026** (ID 908003484), format vidéo, **40 $/jour depuis le 20/11** (30 $ avant), fin **29/11/2026**.
+- Groupe **Génération de leads - Nov 7, 2026** (ID 908003484), format vidéo, **30 $/jour** (40 $ le 20/11 seulement, ramené à 30 $ dans la nuit du 20 au 21/11), fin **29/11/2026**.
 - Audience du groupe (~44 000) :
   - Lieux : Casablanca-Settat, Rabat, Marrakech, Tanger-Tétouan ;
   - Taille d'entreprise : 11 à 10 000+ employés ;
@@ -74,3 +74,4 @@ Formulaires :
 - 20/11 — Vidéo « 8 corps de métier » : plan Menuiserie refait (menuisier de dos à la visseuse, GPT Image 2.6 + Seedance 2.5) ; **version retenue par l'utilisateur : 25 s** (2 s par métier) — fichier `ZEVRA-8-corps-de-metier-25s.mp4` (scratchpad `metiers/`), miniature `ZEVRA-8-corps-miniature.jpg`. Crédits Higgsfield restants ≈ 22. À lancer après le bilan du 21/11 avec le formulaire devis.
 - 20/11 — Version finale « 8 corps de métier » avec son : `ZEVRA-8-corps-de-metier-25s-voix.mp4` — voix Victoria (ElevenLabs) qui nomme chaque métier au moment où il apparaît + « Un seul interlocuteur… » + « Zévra. Demandez votre chiffrage. », effet « whoosh » sur le rembobinage, musique constante (égalisée sous la voix), −13 LUFS.
 - 20/11 — Pub « Vidéo 8 corps de métier — v3 » (1646885504) créée, formulaire devis v3 ; budget du groupe passé de 30 à 40 $/jour (fin 29/11, ≈ 400 $ restants). Approuvée et Active le jour même ; bureaux 15 s mise en pause. Actives : 8 corps de métier (devis v3) + guide v2 (sans tél.).
+- 20–21/11 (minuit) — Budget du groupe ramené de 40 à 30 $/jour à la demande de l'utilisateur.
