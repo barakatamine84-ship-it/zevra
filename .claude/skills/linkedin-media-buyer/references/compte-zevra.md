@@ -80,3 +80,4 @@ Formulaires :
 - 20/11 — Version finale « 8 corps de métier » avec son : `ZEVRA-8-corps-de-metier-25s-voix.mp4` — voix Victoria (ElevenLabs) qui nomme chaque métier au moment où il apparaît + « Un seul interlocuteur… » + « Zévra. Demandez votre chiffrage. », effet « whoosh » sur le rembobinage, musique constante (égalisée sous la voix), −13 LUFS.
 - 20/11 — Pub « Vidéo 8 corps de métier — v3 » (1646885504) créée, formulaire devis v3 ; budget du groupe passé de 30 à 40 $/jour (fin 29/11, ≈ 400 $ restants). Approuvée et Active le jour même ; bureaux 15 s mise en pause. Actives : 8 corps de métier (devis v3) + guide v2 (sans tél.).
 - 20–21/11 (minuit) — Budget du groupe ramené de 40 à 30 $/jour à la demande de l'utilisateur.
+- 22/11 — Décision de l'utilisateur : laisser la vidéo 8 corps de métier (devis v3 avec tél.) tourner encore 1 journée (dimanche 22/11). Point lundi 23/11 : si < 0,5 % de CTR ou toujours délaissée par LinkedIn / 0 lead → pause ; guide v2 inchangé.
