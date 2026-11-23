@@ -24,7 +24,8 @@
 |---|---|---|---|
 | Vidéo bureaux — v3 sans question | 1643992324 | Devis — ZÉVRA — Demande courte v3 (1028419605) | En pause (19/11) |
 | Vidéo bureaux 15s — v3 | 1646437174 | Devis — Demande courte v3 (1028419605), CTA « Obtenir un devis », vidéo 15 s avec voix Victoria | En pause (20/11) |
-| Vidéo 8 corps de métier — v3 | 1646885504 | Devis — Demande courte v3 (1028419605), CTA « Obtenir un devis », vidéo 25 s avec voix | **Active** (20/11) — remplace la bureaux 15 s |
+| Vidéo 8 corps — guide v2 | 1647096104 | Guide — Guide bureaux v2 sans tél (1028432999), CTA « Télécharger », vidéo 16 s hook lumineux, titre « Guide gratuit : 8 corps de métier, 1 seule date » | **Active** (23/11) — test de créa vs vidéo guide |
+| Vidéo 8 corps de métier — v3 | 1646885504 | Devis — Demande courte v3 (1028419605), CTA « Obtenir un devis », vidéo 25 s avec voix | En pause (23/11) |
 | Vidéo guide — v2 sans tél | 1646698524 | Guide — Guide bureaux v2 sans tél (1028432999), CTA « Télécharger » | **Active** (19/11) — remplace la guide v1 |
 | Vidéo guide — 10 points | 1644105684 | Guide gratuit — ZÉVRA — Guide bureaux (1028427859) | En pause (19/11) |
 | Vidéo leads — v3 courte | 1638556244 | Demande courte v3 | En pause |
@@ -84,3 +85,4 @@ Formulaires :
 - 20–21/11 (minuit) — Budget du groupe ramené de 40 à 30 $/jour à la demande de l'utilisateur.
 - 22/11 — Décision de l'utilisateur : laisser la vidéo 8 corps de métier (devis v3 avec tél.) tourner encore 1 journée (dimanche 22/11). Point lundi 23/11 : si < 0,5 % de CTR ou toujours délaissée par LinkedIn / 0 lead → pause ; guide v2 inchangé.
 - 22/11 — Nouvelle version prête (pas encore en ligne) : `ZEVRA-8-corps-guide-16s.mp4` (scratchpad `metiers/v16/`) — hook lumineux généré avec Seedance 2.5 (bureau fini doré qui se « démonte » jusqu'au béton, 2,5 s, sans voile sombre), 8 métiers × 1,2 s, « 1 seul interlocuteur », carte de fin « Téléchargez le guide gratuit », voix Victoria (sans « Demandez votre chiffrage »). Prévue pour le formulaire **guide v2 sans tél** → test de créa sur l'offre gagnante (vs vidéo guide actuelle). À lancer le 23/11 si la 8 corps v3 reste faible.
+- 23/11 — 8 corps v3 (devis avec tél.) en pause ; nouvelle pub « Vidéo 8 corps — guide v2 » (1647096104) Active, même formulaire que la vidéo guide → test de créa sur l'offre gagnante. Actives : Vidéo guide — v2 sans tél + Vidéo 8 corps — guide v2. Budget 30 $/jour.
