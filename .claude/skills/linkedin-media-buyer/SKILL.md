@@ -43,6 +43,17 @@ Avant tout, lis `references/compte-zevra.md` : il contient l'état du compte (ca
 - **Formulaires** : le moins de champs possible ; tester avant de lancer (aperçu de la pub → bouton → envoyer → vérifier le message et le lien de confirmation).
 - **Approbation** : une nouvelle pub/formulaire passe « en cours d'évaluation » (quelques heures à 24 h) ; ne rien modifier pendant ce temps.
 
+## Leçons apprises sur le compte ZÉVRA (novembre 2026)
+- **Le champ téléphone obligatoire tue les envois** : ≈ 44 ouvertures → 0 lead avec téléphone ; 45 ouvertures → 4 leads sans téléphone. Garder prénom, nom, e-mail, entreprise (pré-remplis) et récupérer le numéro au suivi (e-mail, LinkedIn, page merci WhatsApp).
+- **Dans un même groupe, LinkedIn affame les nouvelles pubs** et envoie le budget à celle qui a déjà converti : un test A/B propre (ex. avec/sans téléphone) demande deux groupes avec chacun leur budget, ou ne se lit pas.
+- **« Dupliquer » une pub peut verrouiller le formulaire** : dans ce cas, annuler et passer par « Créer une ou plusieurs publicités ».
+- **Les leads envoyés par un administrateur du compte** (Omar), même depuis la vraie pub, sont marqués `test_lead = true` dans l'export : filtrer sur `false`. Vérifier aussi l'onglet Ressources du compte → Formulaires (colonne Leads) en cas de doute sur un rapport.
+- **Les leads arrivent par vagues** (4 en 2 jours, puis 0 pendant 3 jours) ; le week-end marocain (samedi–dimanche) est plus calme. Juger sur le cumul, pas sur une journée.
+- **Créa** : les vidéos qui s'ouvrent sur un **bureau fini et lumineux** cliquent mieux (≈ 0,9–1,3 %) qu'une ouverture sombre avec du texte (≈ 0,2 %). Les gens décrochent vers 5 s : le message doit être dans les 2 premières secondes.
+- **Fréquence** : vue « Fréquence » enregistrée dans Campaign Manager (Fréquence moyenne, Portée, Impressions, Clics, Leads, Dépensé). Seuil d'alerte ≈ 3 ; au 22/11 : 2,16, portée 25 % de l'audience.
+- **Leads « guide gratuit » = leads froids** : réponse attendue faible (≈ 5–15 %), premier rendez-vous en 2–4 semaines ; qualifier chaque lead (poste, entreprise) avant de relancer, et vérifier que les e-mails de o.berrada@zevra.ma n'arrivent pas en spam (SPF/DKIM dans cPanel).
+- **Données personnelles des leads** (nom, e-mail) : jamais dans le dépôt Git ni dans `compte-zevra.md` — seulement dans l'export LinkedIn ou un fichier local de l'utilisateur.
+
 ## Facturation, crédits, paiement
 - Le **solde actuel** cumule les dépenses non encore prélevées ; LinkedIn facture par seuil ou à date. Un crédit promotionnel ne baisse qu'au moment où une facture est créée.
 - La carte de l'utilisateur est marocaine : **limite de paiement en ligne d'environ 5 000 DH par semaine glissante** (TPE + e-commerce) en plus de la dotation annuelle. Avant une grosse facture, vérifier la marge de la semaine ; éviter les autres gros achats en ligne la même semaine. Chaque « mise à jour de la carte » crée une pré-autorisation (~258 DH) : ne pas la répéter inutilement.
