@@ -70,6 +70,13 @@ Formulaires :
 - **26/11 — 6e vrai lead guide v2 (sans tél.)** : salarié d'une banque offshore (groupe bancaire marocain), titre de certification conformité / anti-blanchiment dans le nom → probablement **non décideur** pour les locaux ; e-mail personnel ; priorité basse-moyenne, à qualifier (coordonnées dans l'export LinkedIn, non recopiées ici). Total vrais leads depuis le 07/11 : 9 (dont 6 via le guide sans tél.) + 1 demande entrante (plateau 300 m²).
 - Leads de test à exclure : ceux au nom de l'utilisateur ou d'Omar (tests des formulaires v4 et guide, 17–18/11 ; test du guide v2 sans tél. envoyé depuis la vraie pub le 20/11 au nom d'Omar Berrada / Zevra — compté comme un vrai lead par LinkedIn).
 
+## Plan de décembre 2026 (proposé le 27/11, à valider)
+Budget total ≈ 400 $ (≈ 4 000 DH), activité forte du 1er au 19/12, réduite du 20 au 31/12. Trois campagnes **séparées** (un budget chacune, pour éviter que LinkedIn affame une offre) :
+- **A — Guide (acquisition froide)** : 10 $/j ; formulaire guide v3 = prénom, nom, e-mail, entreprise + question « Souhaitez-vous qu'Omar vous rappelle ? Oui cette semaine / Oui plus tard / Non, juste le guide » ; confirmation → page zevra.ma/guide (PDF + WhatsApp + Appeler) ; vidéos 8 corps — guide 16 s + vidéo guide ; audience actuelle (44 000, 75 % jamais touchés).
+- **B — Reciblage (audience chaude)** : 6 $/j ; audiences : vues vidéo ≥ 50 % + ouvertures de formulaire sans envoi + visiteurs du site (Insight Tag) ; offre directe « Visite technique offerte » ; lancer dès que l'audience dépasse 300 membres.
+- **C — Architectes partenaires** : 5 $/j (1–19/12) ; architectes, architectes d'intérieur, designers d'espace, bureaux d'études (Casablanca, Rabat, Marrakech) ; message « Vous concevez, nous exécutons » ; formulaire court sans téléphone.
+Objectifs : ≥ 15 leads, ≥ 4 leads qualifiés (décideur + projet), ≥ 2 visites de plateau, CPL guide ≤ 20 $, CTR ≥ 0,8 %.
+
 ## Prochaines décisions
 - **Bilan du test devis vs guide le 21/11/2026** (période 18–21/11).
   - Guide ≥ 1 lead → garder l'offre guide.
